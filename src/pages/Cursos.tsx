@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Layout from '../components/Layout';
 import { Link } from 'react-router-dom';
@@ -5,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 const CursosPage = () => {
+  // Scroll to top handler function
   const handleScrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -14,6 +16,7 @@ const CursosPage = () => {
       <div className="space-y-6">
         <h1 className="text-3xl font-bold text-primary">Cursos Disponibles</h1>
         
+        {/* Curso Inmuebles Card */}
         <Card id="curso-inmuebles" className="overflow-hidden">
           <CardHeader className="bg-primary/5">
             <CardTitle className="text-2xl text-center">CURSO APERTURA INTERVENCIONES EN INMUEBLES</CardTitle>
@@ -64,7 +67,7 @@ const CursosPage = () => {
           </CardContent>
         </Card>
         
-        {/* New Course */}
+        {/* Curso Autoprotección Card */}
         <Card id="curso-autoproteccion" className="overflow-hidden">
           <CardHeader className="bg-primary/5">
             <CardTitle className="text-2xl text-center">CURSO AUTOPROTECCIÓN CIVILES Y DEFENSA DEL HOGAR</CardTitle>
@@ -123,7 +126,7 @@ const CursosPage = () => {
           </CardContent>
         </Card>
         
-        {/* CURSOS ESPECIALES 2025 */}
+        {/* Cursos Especiales 2025 Card */}
         <Card className="overflow-hidden">
           <CardHeader className="bg-primary/5">
             <CardTitle className="text-2xl text-center">CURSOS ESPECIALES 2025</CardTitle>
@@ -142,6 +145,7 @@ const CursosPage = () => {
           </CardContent>
         </Card>
         
+        {/* Próximos Cursos Notice */}
         <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded">
           <p className="text-yellow-800">
             <span className="font-bold">Próximamente:</span> Estamos preparando nuevos cursos especializados. Consulta periódicamente esta página o suscríbete a nuestro boletín para estar al día.

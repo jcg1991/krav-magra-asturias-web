@@ -8,10 +8,13 @@ const Index = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  return <Layout>
+  return (
+    <Layout>
       <div className="space-y-6">
+        {/* Welcome Section */}
         <h1 className="text-3xl font-bold text-primary">Bienvenidos a Krav Maga Asturias</h1>
         
+        {/* Introduction Section */}
         <div className="bg-white rounded-lg shadow-md p-6">
           <h2 className="text-2xl font-bold text-secondary mb-4">Método Israelí de Defensa Personal y Combate Cuerpo a Cuerpo</h2>
           <p className="mb-4">
@@ -25,6 +28,7 @@ const Index = () => {
           </p>
         </div>
         
+        {/* Features Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="bg-white rounded-lg shadow-md p-6">
             <h3 className="text-xl font-bold mb-3">Para Civiles</h3>
@@ -42,9 +46,11 @@ const Index = () => {
           </div>
         </div>
         
+        {/* Latest News Section */}
         <div className="bg-white rounded-lg shadow-md p-6">
           <h2 className="text-2xl font-bold mb-4 text-center">ÚLTIMAS NOTICIAS</h2>
           <div className="space-y-4">
+            {/* News Item 1: Curso Aperturas */}
             <div className="border-b pb-4">
               <h3 className="text-lg font-medium text-center">CURSO APERTURA INTERVENCIONES EN INMUEBLES</h3>
               <div className="flex flex-col items-center mt-3 mb-3">
@@ -62,6 +68,8 @@ const Index = () => {
                 <p className="mt-4 font-bold">* VER MÁS EN*: <Link to="/cursos" className="text-blue-600 hover:underline" onClick={handleScrollToTop}>CURSO APERTURAS INMUEBLES</Link></p>
               </div>
             </div>
+            
+            {/* News Item 2: Curso Autoprotección */}
             <div className="border-b pb-4">
               <h3 className="text-lg font-medium">CURSO AUTOPROTECCIÓN CIVILES Y DEFENSA DEL HOGAR</h3>
               <div className="flex flex-col items-center mt-3 mb-3">
@@ -77,6 +85,8 @@ const Index = () => {
                 <p className="mt-4 font-bold">* VER MÁS EN*: <Link to="/curso-autoproteccion" className="text-blue-600 hover:underline" onClick={handleScrollToTop}>CURSO AUTOPROTECCION CIVILES</Link></p>
               </div>
             </div>
+            
+            {/* News Item 3: Cursos Especiales 2025 */}
             <div className="border-b pb-4">
               <h3 className="text-lg font-medium text-center">CURSOS ESPECIALES 2025</h3>
               <div className="flex flex-col items-center mt-3 mb-3">
@@ -89,6 +99,8 @@ const Index = () => {
           </div>
         </div>
       </div>
-    </Layout>;
+    </Layout>
+  );
 };
+
 export default Index;
