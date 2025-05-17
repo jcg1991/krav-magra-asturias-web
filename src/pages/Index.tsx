@@ -46,15 +46,6 @@ const Index = () => {
           <h2 className="text-2xl font-bold mb-4 text-center">ÚLTIMAS NOTICIAS</h2>
           <div className="space-y-4">
             <div className="border-b pb-4">
-              <h3 className="text-lg font-medium text-center">CURSOS ESPECIALES 2025</h3>
-              <div className="flex flex-col items-center mt-3 mb-3">
-                <img src="/lovable-uploads/296e4e54-8b3f-4aac-84cc-ccd42f280f77.png" alt="Calendario Cursos Especiales 2025" className="rounded-lg max-w-full h-auto mb-2" />
-              </div>
-              <div className="mt-4 space-y-2 text-center">
-                <p className="mt-4 font-bold">* VER MÁS EN*: <Link to="/cursos-especiales" className="text-blue-600 hover:underline" onClick={handleScrollToTop}>CURSOS ESPECIALES 2025</Link></p>
-              </div>
-            </div>
-            <div className="border-b pb-4">
               <h3 className="text-lg font-medium text-center">CURSO APERTURA INTERVENCIONES EN INMUEBLES</h3>
               <div className="flex flex-col items-center mt-3 mb-3">
                 <img src="/lovable-uploads/ef926983-66af-40b5-b7d0-8b97b273ff3a.png" alt="Operativo Unidad Especial en Aperturas" className="rounded-lg max-w-full h-auto mb-2" />
@@ -84,6 +75,15 @@ const Index = () => {
                 <p><strong>HORARIO:</strong> Sábado: 10 a 14h y 14 a 20h / Domingo: 9.30 a 15h</p>
                 <p><strong>PLAZAS:</strong> 15</p>
                 <p className="mt-4 font-bold">* VER MÁS EN*: <Link to="/curso-autoproteccion" className="text-blue-600 hover:underline">CURSO AUTOPROTECCION CIVILES</Link></p>
+              </div>
+            </div>
+            <div className="border-b pb-4">
+              <h3 className="text-lg font-medium text-center">CURSOS ESPECIALES 2025</h3>
+              <div className="flex flex-col items-center mt-3 mb-3">
+                <img src="/lovable-uploads/296e4e54-8b3f-4aac-84cc-ccd42f280f77.png" alt="Calendario Cursos Especiales 2025" className="rounded-lg max-w-full h-auto mb-2" />
+              </div>
+              <div className="mt-4 space-y-2 text-center">
+                <p className="mt-4 font-bold">* VER MÁS EN*: <Link to="/cursos-especiales" className="text-blue-600 hover:underline" onClick={handleScrollToTop}>CURSOS ESPECIALES 2025</Link></p>
               </div>
             </div>
           </div>
