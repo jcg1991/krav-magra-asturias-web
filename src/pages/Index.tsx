@@ -4,6 +4,10 @@ import Layout from '../components/Layout';
 import { Link } from 'react-router-dom';
 
 const Index = () => {
+  const handleScrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return <Layout>
       <div className="space-y-6">
         <h1 className="text-3xl font-bold text-primary">Bienvenidos a Krav Maga Asturias</h1>
@@ -55,7 +59,7 @@ const Index = () => {
                 <p>TFNO.: 655478818</p>
                 <p>E-MAIL: formacion@defensapolicial.es</p>
                 <p>www.defensapolicial.es</p>
-                <p className="mt-4 font-bold">* VER MÁS EN*: <Link to="/cursos" className="text-blue-600 hover:underline">CURSO APERTURAS INMUEBLES</Link></p>
+                <p className="mt-4 font-bold">* VER MÁS EN*: <Link to="/cursos" className="text-blue-600 hover:underline" onClick={handleScrollToTop}>CURSO APERTURAS INMUEBLES</Link></p>
               </div>
             </div>
             <div className="border-b pb-4">
