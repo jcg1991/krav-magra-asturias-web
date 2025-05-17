@@ -16,6 +16,7 @@ const Sidebar = () => {
   });
   
   const [searchTerm, setSearchTerm] = useState('');
+  const [highlights, setHighlights] = useState<HTMLElement[]>([]);
   
   const toggleSubmenu = (submenu: string) => {
     setOpenSubmenus(prev => ({
@@ -26,8 +27,19 @@ const Sidebar = () => {
   
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Remove previous highlights
+    highlights.forEach(highlight => {
+      const parent = highlight.parentNode;
+      if (parent) {
+        const text = highlight.textContent || '';
+        const textNode = document.createTextNode(text);
+        parent.replaceChild(textNode, highlight);
+      }
+    });
+    setHighlights([]);
+    
     if (searchTerm.trim()) {
-      // Implementar la búsqueda en la página
       const searchText = searchTerm.toLowerCase();
       const bodyText = document.body.innerText.toLowerCase();
       
@@ -49,7 +61,7 @@ const Sidebar = () => {
 
         // Resaltar las coincidencias
         const highlightClass = 'bg-yellow-300';
-        const highlights = [];
+        const newHighlights: HTMLElement[] = [];
 
         textNodes.forEach(textNode => {
           const text = textNode.textContent || '';
@@ -75,7 +87,7 @@ const Sidebar = () => {
               highlightSpan.classList.add(highlightClass);
               highlightSpan.textContent = match[0];
               fragment.appendChild(highlightSpan);
-              highlights.push(highlightSpan);
+              newHighlights.push(highlightSpan);
               
               lastIndex = regex.lastIndex;
             }
@@ -93,13 +105,24 @@ const Sidebar = () => {
           }
         });
 
+        // Store the new highlights
+        setHighlights(newHighlights);
+
         // Desplazarse al primer resultado
-        if (highlights.length > 0) {
-          highlights[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+        if (newHighlights.length > 0) {
+          newHighlights[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
           
           // Eliminar los resaltados después de unos segundos
           setTimeout(() => {
-            window.location.reload(); // Manera sencilla de restaurar la página
+            // Instead of reloading, remove highlights after timeout
+            newHighlights.forEach(highlight => {
+              if (highlight.parentNode) {
+                const text = highlight.textContent || '';
+                const textNode = document.createTextNode(text);
+                highlight.parentNode.replaceChild(textNode, highlight);
+              }
+            });
+            setHighlights([]);
           }, 3000);
         }
       }
