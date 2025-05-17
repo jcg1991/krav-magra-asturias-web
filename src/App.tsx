@@ -12,6 +12,7 @@ import Areas from "./pages/Areas";
 import Tecnicas from "./pages/Tecnicas";
 import Contacto from "./pages/Contacto";
 import Enlaces from "./pages/Enlaces";
+import Calendario from "./pages/Calendario";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -29,6 +30,7 @@ const App = () => (
           <Route path="/clases" element={<Clases />} />
           <Route path="/areas" element={<Areas />} />
           <Route path="/tecnicas" element={<Tecnicas />} />
+          <Route path="/calendario" element={<Calendario />} />
           <Route path="/contacto" element={<Contacto />} />
           <Route path="/enlaces" element={<Enlaces />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

@@ -1,3 +1,4 @@
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -39,4 +40,23 @@
 
 .read-the-docs {
   color: #888;
+}
+
+/* Estilos para el header */
+.header-image {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Estilos para enlaces del sidebar */
+.sidebar-menu-item {
+  display: block;
+  font-size: 0.875rem;
+  padding: 0.5rem 0;
+  color: #333;
+}
+
+.sidebar-menu-item:hover {
+  color: #1a56db;
 }

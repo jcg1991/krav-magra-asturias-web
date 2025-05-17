@@ -1,12 +1,15 @@
+
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Search } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 
+type SubmenuType = 'programa-nacional' | 'programa-tecnico' | 'katas' | null;
+
 const Sidebar = () => {
-  const [openSubmenu, setOpenSubmenu] = useState<string | null>("programa-nacional");
+  const [openSubmenu, setOpenSubmenu] = useState<SubmenuType>("programa-nacional");
   
-  const toggleSubmenu = (submenu: string) => {
+  const toggleSubmenu = (submenu: SubmenuType) => {
     setOpenSubmenu(openSubmenu === submenu ? null : submenu);
   };
   
@@ -43,7 +46,10 @@ const Sidebar = () => {
               {/* PROGRAMA TECNICO */}
               <div className="ml-4 border-l-2 border-gray-200">
                 <button
-                  onClick={() => toggleSubmenu("programa-tecnico")}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    toggleSubmenu("programa-tecnico");
+                  }}
                   className="w-full text-left py-2 px-4 font-medium text-sm flex justify-between items-center hover:bg-gray-100"
                 >
                   <span>PROGRAMA TÉCNICO</span>
@@ -63,7 +69,10 @@ const Sidebar = () => {
               {/* KATAS DE DEFENSA */}
               <div className="ml-4 border-l-2 border-gray-200">
                 <button
-                  onClick={() => toggleSubmenu("katas")}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    toggleSubmenu("katas");
+                  }}
                   className="w-full text-left py-2 px-4 font-medium text-sm flex justify-between items-center hover:bg-gray-100"
                 >
                   <span>KATAS DE DEFENSA PERSONAL POLICIAL</span>
@@ -98,6 +107,12 @@ const Sidebar = () => {
         <div className="px-4 py-1">
           <Link to="/cursos-especiales" className="sidebar-menu-item">
             CURSOS ESPECIALES 2025
+          </Link>
+        </div>
+        
+        <div className="px-4 py-1">
+          <Link to="/calendario" className="sidebar-menu-item">
+            CALENDARIO DE CURSOS
           </Link>
         </div>
         
