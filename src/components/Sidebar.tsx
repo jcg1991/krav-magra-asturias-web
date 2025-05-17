@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Search } from 'lucide-react';
@@ -90,6 +89,9 @@ const Sidebar = () => {
             </div>
           )}
         </div>
+        
+        {/* Add spacing between sections */}
+        <div className="my-3"></div>
         
         {/* Other Courses */}
         <div className="px-4 py-1">
