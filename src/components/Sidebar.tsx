@@ -82,9 +82,9 @@ const Sidebar = () => {
                 
                 {openSubmenus["katas"] && (
                   <div className="pl-4">
-                    <a href="#" className="block py-1 px-6 text-sm text-blue-600 hover:underline">Descargar 1era KATA</a>
-                    <a href="#" className="block py-1 px-6 text-sm text-blue-600 hover:underline">Descargar 2ª KATA</a>
-                    <a href="#" className="block py-1 px-6 text-sm text-blue-600 hover:underline">Descargar 3era KATA</a>
+                    <a href="http://bootcampspain.es/wp-content/uploads/1KATADPP.pdf" target="_blank" rel="noopener noreferrer" className="block py-1 px-6 text-sm text-blue-600 hover:underline">Descargar 1era KATA</a>
+                    <a href="https://defensapolicial.es/wp-content/uploads/2a-KATA-DPP.pdf" target="_blank" rel="noopener noreferrer" className="block py-1 px-6 text-sm text-blue-600 hover:underline">Descargar 2ª KATA</a>
+                    <a href="http://bootcampspain.es/wp-content/uploads/3KATADPP.pdf" target="_blank" rel="noopener noreferrer" className="block py-1 px-6 text-sm text-blue-600 hover:underline">Descargar 3era KATA</a>
                   </div>
                 )}
               </div>
