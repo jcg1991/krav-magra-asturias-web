@@ -1,5 +1,5 @@
 
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { Search } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
@@ -26,6 +26,13 @@ const SearchBar: React.FC<SearchBarProps> = ({ className }) => {
     });
     highlightedElementsRef.current = [];
   };
+  
+  // Watch for changes to searchTerm and clear highlights when it's empty
+  useEffect(() => {
+    if (searchTerm === '') {
+      removeHighlights();
+    }
+  }, [searchTerm]);
   
   // Handler for cleaning search text
   const handleClearSearch = () => {
