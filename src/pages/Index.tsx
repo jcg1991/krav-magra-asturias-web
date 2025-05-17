@@ -74,7 +74,7 @@ const Index = () => {
                 <p><strong>FECHA:</strong> 24 Y 25 DE MAYO DE 2025</p>
                 <p><strong>HORARIO:</strong> Sábado: 10 a 14h y 14 a 20h / Domingo: 9.30 a 15h</p>
                 <p><strong>PLAZAS:</strong> 15</p>
-                <p className="mt-4 font-bold">* VER MÁS EN*: <Link to="/curso-autoproteccion" className="text-blue-600 hover:underline">CURSO AUTOPROTECCION CIVILES</Link></p>
+                <p className="mt-4 font-bold">* VER MÁS EN*: <Link to="/cursos#curso-autoproteccion" className="text-blue-600 hover:underline">CURSO AUTOPROTECCION CIVILES</Link></p>
               </div>
             </div>
           </div>
