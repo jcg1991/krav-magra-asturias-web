@@ -11,7 +11,7 @@ const CursosPage = () => {
       <div className="space-y-6">
         <h1 className="text-3xl font-bold text-primary">Cursos Disponibles</h1>
         
-        <Card className="overflow-hidden">
+        <Card id="curso-inmuebles" className="overflow-hidden">
           <CardHeader className="bg-primary/5">
             <CardTitle className="text-2xl text-center">CURSO APERTURA INTERVENCIONES EN INMUEBLES</CardTitle>
           </CardHeader>
