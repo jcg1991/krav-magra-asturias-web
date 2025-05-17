@@ -1,16 +1,12 @@
-
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Search } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 
-// Define a type for the submenu names
-type SubmenuType = "programa-nacional" | "programa-tecnico" | "katas";
-
 const Sidebar = () => {
-  const [openSubmenu, setOpenSubmenu] = useState<SubmenuType | null>("programa-nacional");
+  const [openSubmenu, setOpenSubmenu] = useState<string | null>("programa-nacional");
   
-  const toggleSubmenu = (submenu: SubmenuType) => {
+  const toggleSubmenu = (submenu: string) => {
     setOpenSubmenu(openSubmenu === submenu ? null : submenu);
   };
   
