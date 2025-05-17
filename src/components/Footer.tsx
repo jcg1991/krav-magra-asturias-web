@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between md:space-x-12">
           <div className="w-full md:w-1/3 mb-6 md:mb-0 md:pr-6">
             <h3 className="text-xl font-bold mb-4">Ubicación</h3>
-            <div className="h-32 w-full">
+            <div className="h-64 w-full">
               <iframe 
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2891.5762075533693!2d-5.661888284513865!3d43.54254637912576!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4e5b2b5eaea01d%3A0x434d9ca5db6674fd!2sC.%20Luis%20Adaro%20Ruiz-Falc%C3%B3%2C%2033203%20Gij%C3%B3n%2C%20Asturias!5e0!3m2!1ses!2ses!4v1716720350830!5m2!1ses!2ses" 
                 width="100%" 
