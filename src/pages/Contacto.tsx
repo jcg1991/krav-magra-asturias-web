@@ -4,7 +4,6 @@ import Layout from '../components/Layout';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Mail, Phone, MessageSquare } from 'lucide-react';
 
 const Contacto = () => {
   return (
@@ -20,17 +19,17 @@ const Contacto = () => {
             </div>
             
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Correo electrónico</label>
+              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email</label>
               <Input id="email" type="email" placeholder="tu@email.com" />
             </div>
             
             <div>
-              <label htmlFor="asunto" className="block text-sm font-medium text-gray-700 mb-1">Asunto</label>
-              <Input id="asunto" placeholder="Asunto del mensaje" />
+              <label htmlFor="telefono" className="block text-sm font-medium text-gray-700 mb-1">Teléfono</label>
+              <Input id="telefono" placeholder="Tu teléfono" />
             </div>
             
             <div>
-              <label htmlFor="mensaje" className="block text-sm font-medium text-gray-700 mb-1">Tu mensaje (opcional)</label>
+              <label htmlFor="mensaje" className="block text-sm font-medium text-gray-700 mb-1">Mensaje</label>
               <Textarea id="mensaje" placeholder="¿En qué podemos ayudarte?" className="h-32" />
             </div>
             
@@ -41,68 +40,25 @@ const Contacto = () => {
         <div className="bg-white rounded-lg shadow-md p-6">
           <h2 className="text-2xl font-bold text-secondary mb-4">Información de Contacto</h2>
           <div className="space-y-4">
-            <div className="flex items-start">
-              <div className="mr-3 text-primary">
-                <Mail className="h-5 w-5" />
-              </div>
-              <div>
-                <h3 className="font-semibold mb-1">Correo Electrónico:</h3>
-                <p>formacion@defensapolicial.es</p>
-                <p className="text-sm text-gray-600 mt-1">
-                  Envíenos un correo indicando su nombre, apellidos y dirección de correo
-                  electrónico donde quiera que se le envíe la información.
-                </p>
-              </div>
-            </div>
-            
-            <div className="flex items-start">
-              <div className="mr-3 text-primary">
-                <Phone className="h-5 w-5" />
-              </div>
-              <div>
-                <h3 className="font-semibold mb-1">Teléfonos:</h3>
-                <p>Teléfono: 655478818</p>
-                <p>Móvil: 655478818</p>
-                <p>Federación de Lucha del Principado de Asturias: 985331721</p>
-              </div>
-            </div>
-            
-            <div className="flex items-start">
-              <div className="mr-3 text-primary">
-                <MessageSquare className="h-5 w-5" />
-              </div>
-              <div>
-                <h3 className="font-semibold mb-1">Dirección:</h3>
-                <p>Federación de Lucha del Principado de Asturias</p>
-                <p>C/Luis Adaro Ruiz-Falcó</p>
-                <p>33203–Gijón (Asturias)</p>
-                <p>ESPAÑA</p>
-              </div>
+            <div>
+              <h3 className="font-semibold mb-1">Dirección:</h3>
+              <p>Calle Principal 123, 33001 Oviedo, Asturias</p>
             </div>
             
             <div>
-              <h3 className="font-semibold mb-1">Redes Sociales:</h3>
-              <a href="http://www.facebook.com/defensapolicial.intervencion?fref=ts" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">
-                Facebook
-              </a>
+              <h3 className="font-semibold mb-1">Teléfono:</h3>
+              <p>+34 XXX XXX XXX</p>
             </div>
             
-            <div className="mt-6 pt-6 border-t border-gray-200">
-              <p className="text-sm text-gray-600">
-                Nuestros Cursos son impartidos por Profesionales de la Defensa y la Seguridad y nuestras Titulaciones, 
-                certificados...son OFICIALES y BAREMABLES EN MERITOS tanto para las FF.Y CC. de Seguridad y 
-                Ejército como para otro tipo de administración.
-              </p>
-              
-              <p className="text-xs text-gray-500 mt-4">
-                *A los efectos previstos en la Ley Orgánica 15/1999 de 13 de diciembre, sobre la protección de datos de carácter personal,
-                se le informa que los datos personales proporcionados se incorporarán (o actualizarán) a los ficheros del Departamento de
-                Krav Maga de la Federación de Luchas Olímpicas y D.A. del Principado de Asturias. La finalidad del tratamiento de los datos
-                será la de realizar los servicios de información de Cursos, incorporación a las actividades propias del Departamento, así
-                como la realización de estudios estadísticos. Vd. Tiene derecho al acceso, rectificación, cancelación y oposición en los
-                términos previstos en la ley, que podrá ejercitar mediante correo electrónico dirigido al responsable de los mismos en la
-                siguiente dirección E-Mail: formacion@defensapolicial.es
-              </p>
+            <div>
+              <h3 className="font-semibold mb-1">Email:</h3>
+              <p>info@kravmaga-asturias.es</p>
+            </div>
+            
+            <div>
+              <h3 className="font-semibold mb-1">Horario de Oficina:</h3>
+              <p>Lunes a Viernes: 9:00 - 20:00</p>
+              <p>Sábados: 10:00 - 14:00</p>
             </div>
           </div>
         </div>

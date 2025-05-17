@@ -1,15 +1,11 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import "../App.css";
 
 const Header = () => {
   return (
     <header className="relative">
-      <div 
-        className="header-image h-60 w-full bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/lovable-uploads/1351bfb4-8ef5-4617-a657-8887c75b39d0.png')" }}
-      ></div>
+      <div className="header-image h-60 w-full"></div>
       <nav className="bg-primary shadow-md sticky top-0 z-50">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-center h-16">
@@ -32,9 +28,6 @@ const Header = () => {
                 </Link>
                 <Link to="/tecnicas" className="px-3 py-2 text-white font-medium hover:bg-primary-foreground/10 rounded-md">
                   TECNICAS
-                </Link>
-                <Link to="/calendario" className="px-3 py-2 text-white font-medium hover:bg-primary-foreground/10 rounded-md">
-                  CALENDARIO
                 </Link>
                 <Link to="/contacto" className="px-3 py-2 text-white font-medium hover:bg-primary-foreground/10 rounded-md">
                   CONTACTO
