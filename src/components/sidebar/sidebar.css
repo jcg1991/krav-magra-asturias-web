@@ -1,0 +1,14 @@
+
+.sidebar-menu-item {
+  display: block;
+  width: 100%;
+  text-align: left;
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0.25rem 0;
+}
+
+.sidebar-menu-item:hover {
+  text-decoration: underline;
+  color: #4a5568;
+}
