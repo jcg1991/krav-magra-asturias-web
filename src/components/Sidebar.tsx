@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import SearchBar from './sidebar/SearchBar';
 import SubmenuItem from './sidebar/SubmenuItem';
@@ -104,7 +105,7 @@ const Sidebar = () => {
           CURSO APERTURA INTERVENCIONES EN INMUEBLES
         </SidebarNavLink>
         
-        <SidebarNavLink to="/curso-autoproteccion">
+        <SidebarNavLink to="/cursos" id="curso-autoproteccion">
           CURSO AUTOPROTECCIÓN CIVILES Y DEFENSA DEL HOGAR
         </SidebarNavLink>
         

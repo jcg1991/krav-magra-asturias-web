@@ -62,7 +62,7 @@ const CursosPage = () => {
         </Card>
         
         {/* New Course */}
-        <Card className="overflow-hidden">
+        <Card id="curso-autoproteccion" className="overflow-hidden">
           <CardHeader className="bg-primary/5">
             <CardTitle className="text-2xl text-center">CURSO AUTOPROTECCIÓN CIVILES Y DEFENSA DEL HOGAR</CardTitle>
           </CardHeader>
