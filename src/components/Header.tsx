@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const Header = () => {
   return (
     <header className="relative">
-      <div className="header-image w-full"></div>
+      <div className="header-image h-60 w-full"></div>
       <nav className="bg-primary shadow-md sticky top-0 z-50">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-center h-16">
