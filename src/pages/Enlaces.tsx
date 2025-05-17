@@ -25,14 +25,7 @@ const Enlaces = () => {
             </ul>
           </div>
           
-          <div>
-            <h3 className="text-xl font-semibold mb-2">Federaciones y Asociaciones</h3>
-            <ul className="list-disc pl-6 space-y-2">
-              <li><a href="#" className="text-blue-600 hover:underline">Federación Española de Krav Maga</a></li>
-              <li><a href="#" className="text-blue-600 hover:underline">International Krav Maga Federation (IKMF)</a></li>
-              <li><a href="#" className="text-blue-600 hover:underline">Krav Maga Global (KMG)</a></li>
-            </ul>
-          </div>
+          
           
           
           
