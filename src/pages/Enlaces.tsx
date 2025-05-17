@@ -34,14 +34,7 @@ const Enlaces = () => {
             </ul>
           </div>
           
-          <div>
-            <h3 className="text-xl font-semibold mb-2">Recursos Educativos</h3>
-            <ul className="list-disc pl-6 space-y-2">
-              <li><a href="#" className="text-blue-600 hover:underline">Blog de Krav Maga</a></li>
-              <li><a href="#" className="text-blue-600 hover:underline">Canal de YouTube con tutoriales</a></li>
-              <li><a href="#" className="text-blue-600 hover:underline">Libros recomendados</a></li>
-            </ul>
-          </div>
+          
           
           
         </div>
