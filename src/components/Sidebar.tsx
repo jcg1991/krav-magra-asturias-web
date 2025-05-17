@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Search } from 'lucide-react';
@@ -64,9 +63,9 @@ const Sidebar = () => {
                 {openSubmenus["programa-tecnico"] && (
                   <div className="pl-4">
                     <div className="py-1 px-4 text-sm font-medium text-gray-700">HASTA C.N. 3º DAN</div>
-                    <a href="#" className="block py-1 px-6 text-sm text-blue-600 hover:underline">Descargar 1er DAN</a>
-                    <a href="#" className="block py-1 px-6 text-sm text-blue-600 hover:underline">Descargar 2º DAN</a>
-                    <a href="#" className="block py-1 px-6 text-sm text-blue-600 hover:underline">Descargar 3er DAN</a>
+                    <a href="http://bootcampspain.es/wp-content/uploads/DPPCN1DANDPPCOMPLETO.pdf" target="_blank" rel="noopener noreferrer" className="block py-1 px-6 text-sm text-blue-600 hover:underline">Descargar 1er DAN</a>
+                    <a href="https://defensapolicial.es/wp-content/uploads/PROGRAMA-2-DAN-DPP.pdf" target="_blank" rel="noopener noreferrer" className="block py-1 px-6 text-sm text-blue-600 hover:underline">Descargar 2º DAN</a>
+                    <a href="http://bootcampspain.es/wp-content/uploads/PROGRAMA3DANDPP.pdf" target="_blank" rel="noopener noreferrer" className="block py-1 px-6 text-sm text-blue-600 hover:underline">Descargar 3er DAN</a>
                   </div>
                 )}
               </div>
