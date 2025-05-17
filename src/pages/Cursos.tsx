@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Layout from '../components/Layout';
 import { Link } from 'react-router-dom';
@@ -6,6 +5,10 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 const CursosPage = () => {
+  const handleScrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <Layout>
       <div className="space-y-6">
@@ -116,6 +119,25 @@ const CursosPage = () => {
                   </Button>
                 </div>
               </div>
+            </div>
+          </CardContent>
+        </Card>
+        
+        {/* CURSOS ESPECIALES 2025 */}
+        <Card className="overflow-hidden">
+          <CardHeader className="bg-primary/5">
+            <CardTitle className="text-2xl text-center">CURSOS ESPECIALES 2025</CardTitle>
+          </CardHeader>
+          <CardContent className="p-6">
+            <div className="flex flex-col items-center mt-3 mb-3">
+              <img 
+                src="/lovable-uploads/296e4e54-8b3f-4aac-84cc-ccd42f280f77.png" 
+                alt="Calendario Cursos Especiales 2025" 
+                className="rounded-lg max-w-full h-auto mb-2" 
+              />
+            </div>
+            <div className="mt-4 space-y-2 text-center">
+              <p className="mt-4 font-bold">* VER MÁS EN*: <Link to="/cursos-especiales" className="text-blue-600 hover:underline" onClick={handleScrollToTop}>CURSOS ESPECIALES 2025</Link></p>
             </div>
           </CardContent>
         </Card>
