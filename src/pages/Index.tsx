@@ -42,8 +42,25 @@ const Index = () => {
           <h2 className="text-2xl font-bold mb-4">Últimas Noticias</h2>
           <div className="space-y-4">
             <div className="border-b pb-4">
-              <h3 className="text-lg font-medium">Nuevo curso intensivo en junio</h3>
-              <p className="text-gray-600">Abierta inscripción para el curso intensivo de verano 2025. Plazas limitadas.</p>
+              <h3 className="text-lg font-medium">CURSO APERTURA INTERVENCIONES EN INMUEBLES</h3>
+              <div className="flex flex-col items-center mt-3 mb-3">
+                <img 
+                  src="/lovable-uploads/ef926983-66af-40b5-b7d0-8b97b273ff3a.png" 
+                  alt="Operativo Unidad Especial en Aperturas" 
+                  className="rounded-lg max-w-full h-auto mb-2" 
+                />
+                <p className="text-center font-medium">IMPARTIDO POR OPERATIVO UNIDAD ESPECIAL EN APERTURAS</p>
+              </div>
+              <div className="mt-4 space-y-2">
+                <p><strong>FECHA:</strong> 24, 25 Y 26 DE JUNIO DE 2025</p>
+                <p><strong>DIPLOMA / CERTIFICADO:</strong> Oficial y Baremable</p>
+                <p><strong>PLAZAS:</strong> 15</p>
+                <p><strong>INFORMACIÓN / INSCRIPCIONES:</strong></p>
+                <p>TFNO.: 655478818</p>
+                <p>E-MAIL: formacion@defensapolicial.es</p>
+                <p>www.defensapolicial.es</p>
+                <p className="mt-4 font-bold">* VER MÁS EN*: <a href="#" className="text-blue-600 hover:underline">CURSO APERTURAS INMUEBLES</a></p>
+              </div>
             </div>
             <div className="border-b pb-4">
               <h3 className="text-lg font-medium">Seminario de técnicas avanzadas</h3>
