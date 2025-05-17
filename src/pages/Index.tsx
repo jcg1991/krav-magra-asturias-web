@@ -36,7 +36,7 @@ const Index = () => {
         </div>
         
         <div className="bg-white rounded-lg shadow-md p-6">
-          <h2 className="text-2xl font-bold mb-4 text-center">Últimas Noticias</h2>
+          <h2 className="text-2xl font-bold mb-4 text-center">ÚLTIMAS NOTICIAS</h2>
           <div className="space-y-4">
             <div className="border-b pb-4">
               <h3 className="text-lg font-medium text-center">CURSO APERTURA INTERVENCIONES EN INMUEBLES</h3>
