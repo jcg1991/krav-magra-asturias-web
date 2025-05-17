@@ -1,5 +1,8 @@
+
 import React from 'react';
 import Layout from '../components/Layout';
+import { Link } from 'react-router-dom';
+
 const Index = () => {
   return <Layout>
       <div className="space-y-6">
@@ -52,7 +55,7 @@ const Index = () => {
                 <p>TFNO.: 655478818</p>
                 <p>E-MAIL: formacion@defensapolicial.es</p>
                 <p>www.defensapolicial.es</p>
-                <p className="mt-4 font-bold">* VER MÁS EN*: <a href="#" className="text-blue-600 hover:underline">CURSO APERTURAS INMUEBLES</a></p>
+                <p className="mt-4 font-bold">* VER MÁS EN*: <Link to="/cursos" className="text-blue-600 hover:underline">CURSO APERTURAS INMUEBLES</Link></p>
               </div>
             </div>
             <div className="border-b pb-4">

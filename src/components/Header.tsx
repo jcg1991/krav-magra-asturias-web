@@ -29,7 +29,7 @@ const Header = () => {
                 <Link to="/tecnicas" className="px-3 py-2 text-white font-medium hover:bg-primary-foreground/10 rounded-md">
                   TECNICAS
                 </Link>
-                <Link to="/cursos" className="px-3 py-2 text-white font-medium hover:bg-primary-foreground/10 rounded-md bg-[#8B5CF6]/20">
+                <Link to="/cursos" className="px-3 py-2 text-white font-medium hover:bg-primary-foreground/10 rounded-md">
                   CURSOS
                 </Link>
                 <Link to="/calendario" className="px-3 py-2 text-white font-medium hover:bg-primary-foreground/10 rounded-md">
