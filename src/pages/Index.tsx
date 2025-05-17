@@ -1,10 +1,7 @@
-
 import React from 'react';
 import Layout from '../components/Layout';
-
 const Index = () => {
-  return (
-    <Layout>
+  return <Layout>
       <div className="space-y-6">
         <h1 className="text-3xl font-bold text-primary">Bienvenidos a Krav Maga Asturias</h1>
         
@@ -39,16 +36,12 @@ const Index = () => {
         </div>
         
         <div className="bg-white rounded-lg shadow-md p-6">
-          <h2 className="text-2xl font-bold mb-4">Últimas Noticias</h2>
+          <h2 className="text-2xl font-bold mb-4 text-center">Últimas Noticias</h2>
           <div className="space-y-4">
             <div className="border-b pb-4">
-              <h3 className="text-lg font-medium">CURSO APERTURA INTERVENCIONES EN INMUEBLES</h3>
+              <h3 className="text-lg font-medium text-center">CURSO APERTURA INTERVENCIONES EN INMUEBLES</h3>
               <div className="flex flex-col items-center mt-3 mb-3">
-                <img 
-                  src="/lovable-uploads/ef926983-66af-40b5-b7d0-8b97b273ff3a.png" 
-                  alt="Operativo Unidad Especial en Aperturas" 
-                  className="rounded-lg max-w-full h-auto mb-2" 
-                />
+                <img src="/lovable-uploads/ef926983-66af-40b5-b7d0-8b97b273ff3a.png" alt="Operativo Unidad Especial en Aperturas" className="rounded-lg max-w-full h-auto mb-2" />
                 <p className="text-center font-medium">IMPARTIDO POR OPERATIVO UNIDAD ESPECIAL EN APERTURAS</p>
               </div>
               <div className="mt-4 space-y-2">
@@ -69,8 +62,6 @@ const Index = () => {
           </div>
         </div>
       </div>
-    </Layout>
-  );
+    </Layout>;
 };
-
 export default Index;
