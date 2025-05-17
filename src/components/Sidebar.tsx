@@ -1,3 +1,4 @@
+
 import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { Search } from 'lucide-react';
@@ -135,7 +136,7 @@ const Sidebar = () => {
           />
         </div>
         
-        {/* Buscador nuevo sin X y con búsqueda funcional */}
+        {/* Buscador corregido con botón de búsqueda funcional */}
         <form onSubmit={handleSearch} className="relative">
           <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
             <Search className="h-4 w-4 text-gray-400" />
@@ -151,6 +152,7 @@ const Sidebar = () => {
             type="submit"
             variant="ghost"
             className="absolute inset-y-0 right-0 px-3 flex items-center text-sm text-primary hover:text-primary-dark"
+            onClick={handleSearch}
           >
             Buscar
           </Button>
