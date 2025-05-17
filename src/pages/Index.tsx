@@ -59,8 +59,19 @@ const Index = () => {
               </div>
             </div>
             <div className="border-b pb-4">
-              <h3 className="text-lg font-medium">Seminario de técnicas avanzadas</h3>
-              <p className="text-gray-600">El próximo mes recibiremos a instructores internacionales para un seminario especial.</p>
+              <h3 className="text-lg font-medium">CURSO AUTOPROTECCIÓN CIVILES Y DEFENSA DEL HOGAR</h3>
+              <div className="flex flex-col items-center mt-3 mb-3">
+                <div className="grid grid-cols-2 gap-2">
+                  <img src="/lovable-uploads/c383a2e7-3fd4-48cb-8b56-343da38ae2b1.png" alt="Autoprotección del hogar" className="rounded-lg max-w-full h-auto" />
+                  <img src="/lovable-uploads/fafb3b38-5f38-41da-acc1-df3250599a61.png" alt="Defensa personal en el hogar" className="rounded-lg max-w-full h-auto" />
+                </div>
+              </div>
+              <div className="mt-4 space-y-2">
+                <p><strong>FECHA:</strong> 24 Y 25 DE MAYO DE 2025</p>
+                <p><strong>HORARIO:</strong> Sábado: 10 a 14h y 14 a 20h / Domingo: 9.30 a 15h</p>
+                <p><strong>PLAZAS:</strong> 15</p>
+                <p className="mt-4 font-bold">* VER MÁS EN*: <Link to="/curso-autoproteccion" className="text-blue-600 hover:underline">CURSO AUTOPROTECCION CIVILES</Link></p>
+              </div>
             </div>
           </div>
         </div>
