@@ -1,5 +1,4 @@
-
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { Search } from 'lucide-react';
 import { Input } from '@/components/ui/input';
@@ -16,7 +15,8 @@ const Sidebar = () => {
   });
   
   const [searchTerm, setSearchTerm] = useState('');
-  const [highlights, setHighlights] = useState<HTMLElement[]>([]);
+  // Referencia para almacenar los elementos resaltados
+  const highlightedElementsRef = useRef<HTMLElement[]>([]);
   
   const toggleSubmenu = (submenu: string) => {
     setOpenSubmenus(prev => ({
@@ -28,8 +28,91 @@ const Sidebar = () => {
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Remove previous highlights
-    highlights.forEach(highlight => {
+    // Eliminar resaltados anteriores
+    removeHighlights();
+    
+    if (!searchTerm.trim()) return;
+    
+    const searchText = searchTerm.toLowerCase();
+    
+    // Buscar en el contenido de la página
+    const textNodes: Node[] = [];
+    const walker = document.createTreeWalker(
+      document.body,
+      NodeFilter.SHOW_TEXT,
+      null
+    );
+    
+    let node;
+    while (node = walker.nextNode()) {
+      if (node.textContent && node.textContent.toLowerCase().includes(searchText)) {
+        textNodes.push(node);
+      }
+    }
+    
+    if (textNodes.length === 0) return;
+    
+    // Crear resaltados
+    const newHighlights: HTMLElement[] = [];
+    
+    textNodes.forEach(textNode => {
+      const text = textNode.textContent || '';
+      const parent = textNode.parentNode;
+      
+      if (parent && text.toLowerCase().includes(searchText)) {
+        const fragment = document.createDocumentFragment();
+        let lastIndex = 0;
+        const regex = new RegExp(searchText, 'gi');
+        let match;
+        
+        while ((match = regex.exec(text)) !== null) {
+          // Texto antes de la coincidencia
+          if (match.index > lastIndex) {
+            fragment.appendChild(
+              document.createTextNode(text.substring(lastIndex, match.index))
+            );
+          }
+          
+          // Texto resaltado
+          const highlightSpan = document.createElement('span');
+          highlightSpan.className = 'bg-yellow-300';
+          highlightSpan.textContent = match[0];
+          fragment.appendChild(highlightSpan);
+          newHighlights.push(highlightSpan);
+          
+          lastIndex = regex.lastIndex;
+        }
+        
+        // Texto después de la última coincidencia
+        if (lastIndex < text.length) {
+          fragment.appendChild(
+            document.createTextNode(text.substring(lastIndex))
+          );
+        }
+        
+        // Reemplazar nodo de texto original con el fragmento
+        parent.replaceChild(fragment, textNode);
+      }
+    });
+    
+    // Guardar referencias a los resaltados
+    highlightedElementsRef.current = newHighlights;
+    
+    // Desplazar a la primera coincidencia
+    if (newHighlights.length > 0) {
+      newHighlights[0].scrollIntoView({ 
+        behavior: 'smooth', 
+        block: 'center' 
+      });
+      
+      // Eliminar los resaltados después de 3 segundos
+      setTimeout(removeHighlights, 3000);
+    }
+  };
+  
+  // Función para eliminar los resaltados
+  const removeHighlights = () => {
+    highlightedElementsRef.current.forEach(highlight => {
       const parent = highlight.parentNode;
       if (parent) {
         const text = highlight.textContent || '';
@@ -37,96 +120,7 @@ const Sidebar = () => {
         parent.replaceChild(textNode, highlight);
       }
     });
-    setHighlights([]);
-    
-    if (searchTerm.trim()) {
-      const searchText = searchTerm.toLowerCase();
-      const bodyText = document.body.innerText.toLowerCase();
-      
-      if (bodyText.includes(searchText)) {
-        // Crear un resaltado temporal de las coincidencias
-        const textNodes = [];
-        const walker = document.createTreeWalker(
-          document.body,
-          NodeFilter.SHOW_TEXT,
-          null
-        );
-
-        let node;
-        while (node = walker.nextNode()) {
-          if (node.textContent && node.textContent.toLowerCase().includes(searchText)) {
-            textNodes.push(node);
-          }
-        }
-
-        // Resaltar las coincidencias
-        const highlightClass = 'bg-yellow-300';
-        const newHighlights: HTMLElement[] = [];
-
-        textNodes.forEach(textNode => {
-          const text = textNode.textContent || '';
-          const parent = textNode.parentNode;
-          
-          if (parent && text.toLowerCase().includes(searchText)) {
-            const fragment = document.createDocumentFragment();
-            let currentText = text;
-            let lastIndex = 0;
-            const regex = new RegExp(searchText, 'gi');
-            let match;
-            
-            while ((match = regex.exec(text)) !== null) {
-              // Texto antes de la coincidencia
-              if (match.index > lastIndex) {
-                fragment.appendChild(
-                  document.createTextNode(currentText.substring(lastIndex, match.index))
-                );
-              }
-              
-              // Texto de la coincidencia resaltado
-              const highlightSpan = document.createElement('span');
-              highlightSpan.classList.add(highlightClass);
-              highlightSpan.textContent = match[0];
-              fragment.appendChild(highlightSpan);
-              newHighlights.push(highlightSpan);
-              
-              lastIndex = regex.lastIndex;
-            }
-            
-            // Texto restante después de la última coincidencia
-            if (lastIndex < currentText.length) {
-              fragment.appendChild(
-                document.createTextNode(currentText.substring(lastIndex))
-              );
-            }
-            
-            if (parent) {
-              parent.replaceChild(fragment, textNode);
-            }
-          }
-        });
-
-        // Store the new highlights
-        setHighlights(newHighlights);
-
-        // Desplazarse al primer resultado
-        if (newHighlights.length > 0) {
-          newHighlights[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
-          
-          // Eliminar los resaltados después de unos segundos
-          setTimeout(() => {
-            // Instead of reloading, remove highlights after timeout
-            newHighlights.forEach(highlight => {
-              if (highlight.parentNode) {
-                const text = highlight.textContent || '';
-                const textNode = document.createTextNode(text);
-                highlight.parentNode.replaceChild(textNode, highlight);
-              }
-            });
-            setHighlights([]);
-          }, 3000);
-        }
-      }
-    }
+    highlightedElementsRef.current = [];
   };
   
   return (
@@ -141,7 +135,7 @@ const Sidebar = () => {
           />
         </div>
         
-        {/* Buscador con funcionalidad - Changed input type to text to remove the native X button */}
+        {/* Buscador nuevo sin X y con búsqueda funcional */}
         <form onSubmit={handleSearch} className="relative">
           <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
             <Search className="h-4 w-4 text-gray-400" />
@@ -149,12 +143,12 @@ const Sidebar = () => {
           <Input
             type="text"
             placeholder="Buscar..."
-            className="pl-10 w-full"
+            className="pl-10 pr-16 w-full"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
           <Button 
-            type="submit" 
+            type="submit"
             variant="ghost"
             className="absolute inset-y-0 right-0 px-3 flex items-center text-sm text-primary hover:text-primary-dark"
           >
