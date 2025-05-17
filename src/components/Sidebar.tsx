@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Search } from 'lucide-react';
 import { Input } from '@/components/ui/input';
+import { Button } from '@/components/ui/button';
 
 const Sidebar = () => {
   // Track multiple submenus with an object
@@ -129,12 +130,13 @@ const Sidebar = () => {
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
-          <button 
+          <Button 
             type="submit" 
+            variant="ghost"
             className="absolute inset-y-0 right-0 px-3 flex items-center text-sm text-primary hover:text-primary-dark"
           >
             Buscar
-          </button>
+          </Button>
         </form>
       </div>
       
