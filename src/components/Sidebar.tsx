@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Search } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 
+// Define a union type for our submenus
 type SubmenuType = 'programa-nacional' | 'programa-tecnico' | 'katas' | null;
 
 const Sidebar = () => {
@@ -91,41 +92,41 @@ const Sidebar = () => {
         </div>
         
         {/* Add spacing between sections */}
-        <div className="my-3"></div>
+        <div className="my-6"></div>
         
         {/* Other Courses */}
         <div className="px-4 py-1">
-          <Link to="/curso-inmuebles" className="sidebar-menu-item">
+          <Link to="/curso-inmuebles" className="block py-1 text-sm hover:text-blue-600">
             CURSO APERTURA INTERVENCIONES EN INMUEBLES
           </Link>
         </div>
         
         <div className="px-4 py-1">
-          <Link to="/curso-autoproteccion" className="sidebar-menu-item">
+          <Link to="/curso-autoproteccion" className="block py-1 text-sm hover:text-blue-600">
             CURSO AUTOPROTECCIÓN CIVILES Y DEFENSA DEL HOGAR
           </Link>
         </div>
         
         <div className="px-4 py-1">
-          <Link to="/cursos-especiales" className="sidebar-menu-item">
+          <Link to="/cursos-especiales" className="block py-1 text-sm hover:text-blue-600">
             CURSOS ESPECIALES 2025
           </Link>
         </div>
         
         <div className="px-4 py-1">
-          <Link to="/calendario" className="sidebar-menu-item">
+          <Link to="/calendario" className="block py-1 text-sm hover:text-blue-600">
             CALENDARIO DE CURSOS
           </Link>
         </div>
         
         <div className="px-4 py-1">
-          <Link to="/curso-inmuebles-urbano" className="sidebar-menu-item">
+          <Link to="/curso-inmuebles-urbano" className="block py-1 text-sm hover:text-blue-600">
             CURSO INTERVENCIÓN EN INMUEBLES Y ZONAS URBANIZADAS
           </Link>
         </div>
         
         <div className="px-4 py-1">
-          <Link to="/curso-legion" className="sidebar-menu-item text-xs">
+          <Link to="/curso-legion" className="block py-1 text-sm hover:text-blue-600">
             CURSO INTERVENCIÓN POLICIAL X BANDERA MILLAN ASTRAY – LEGIÓN ESPAÑOLA
           </Link>
         </div>
