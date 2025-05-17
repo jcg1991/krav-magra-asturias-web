@@ -26,7 +26,9 @@ const Sidebar = () => {
     }));
   };
   
+  // Revised search handler to ensure it doesn't cause page reload
   const handleSearch = (e: React.FormEvent) => {
+    // Ensure the default form submission behavior is prevented
     e.preventDefault();
     
     // Eliminar resaltados anteriores
@@ -124,6 +126,14 @@ const Sidebar = () => {
     highlightedElementsRef.current = [];
   };
   
+  // Create a separate button click handler that doesn't trigger form submission
+  const handleSearchButtonClick = (e: React.MouseEvent) => {
+    // Stop the click from bubbling up to the form
+    e.stopPropagation();
+    // Call the search function directly
+    handleSearch(e as unknown as React.FormEvent);
+  };
+  
   return (
     <aside className="w-64 bg-gray-50 border-r min-h-screen">
       <div className="px-4 py-5">
@@ -136,7 +146,7 @@ const Sidebar = () => {
           />
         </div>
         
-        {/* Buscador corregido con botón de búsqueda funcional */}
+        {/* Buscador con manejo correcto de eventos */}
         <form onSubmit={handleSearch} className="relative">
           <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
             <Search className="h-4 w-4 text-gray-400" />
@@ -149,10 +159,10 @@ const Sidebar = () => {
             onChange={(e) => setSearchTerm(e.target.value)}
           />
           <Button 
-            type="submit"
+            type="button" // Changed from "submit" to "button"
             variant="ghost"
             className="absolute inset-y-0 right-0 px-3 flex items-center text-sm text-primary hover:text-primary-dark"
-            onClick={handleSearch}
+            onClick={handleSearchButtonClick} // Use the dedicated click handler
           >
             Buscar
           </Button>
