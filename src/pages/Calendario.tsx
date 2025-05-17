@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Layout from '../components/Layout';
 import { Calendar } from "@/components/ui/calendar";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Link } from 'react-router-dom';
 
 // Define event type
 interface CalendarEvent {
@@ -10,12 +11,13 @@ interface CalendarEvent {
   title: string;
   date: Date;
   description: string;
+  highlighted?: boolean;
 }
 
 const CalendarioPage = () => {
   const [date, setDate] = useState<Date | undefined>(new Date());
   
-  // Sample events data
+  // Sample events data - added course dates with highlighted property
   const events: CalendarEvent[] = [
     {
       id: 1,
@@ -40,6 +42,28 @@ const CalendarioPage = () => {
       title: "Entrenamiento de Técnicas Avanzadas",
       date: new Date(2025, 6, 15), // July 15, 2025
       description: "Sesión de entrenamiento para cinturones avanzados."
+    },
+    // Course dates - highlighted
+    {
+      id: 5,
+      title: "CURSO APERTURA INTERVENCIONES EN INMUEBLES - Día 1",
+      date: new Date(2025, 5, 24), // June 24, 2025
+      description: "Primer día del curso de intervenciones en inmuebles impartido por Operativo Unidad Especial.",
+      highlighted: true
+    },
+    {
+      id: 6,
+      title: "CURSO APERTURA INTERVENCIONES EN INMUEBLES - Día 2",
+      date: new Date(2025, 5, 25), // June 25, 2025
+      description: "Segundo día del curso de intervenciones en inmuebles impartido por Operativo Unidad Especial.",
+      highlighted: true
+    },
+    {
+      id: 7,
+      title: "CURSO APERTURA INTERVENCIONES EN INMUEBLES - Día 3",
+      date: new Date(2025, 5, 26), // June 26, 2025
+      description: "Tercer día del curso de intervenciones en inmuebles impartido por Operativo Unidad Especial.",
+      highlighted: true
     }
   ];
 
@@ -55,6 +79,24 @@ const CalendarioPage = () => {
   };
 
   const selectedDateEvents = getEventsForSelectedDate();
+  
+  // Function to add CSS classes for days with events
+  const getDayClassNames = (day: Date) => {
+    const eventsOnDay = events.filter(
+      event => 
+        event.date.getDate() === day.getDate() && 
+        event.date.getMonth() === day.getMonth() && 
+        event.date.getFullYear() === day.getFullYear()
+    );
+    
+    const hasHighlightedEvent = eventsOnDay.some(event => event.highlighted);
+    
+    if (hasHighlightedEvent) {
+      return "bg-[#8B5CF6] text-white ring-2 ring-[#8B5CF6] hover:bg-[#7E69AB]";
+    }
+    
+    return eventsOnDay.length > 0 ? "bg-blue-100 text-blue-800 ring-1 ring-blue-400" : "";
+  };
 
   return (
     <Layout>
@@ -73,7 +115,33 @@ const CalendarioPage = () => {
                   selected={date}
                   onSelect={setDate}
                   className="rounded-md border shadow pointer-events-auto"
+                  modifiersClassNames={{
+                    selected: "bg-primary text-primary-foreground",
+                  }}
+                  modifiers={{
+                    highlighted: events
+                      .filter(event => event.highlighted)
+                      .map(event => new Date(event.date))
+                  }}
+                  modifiersStyles={{
+                    highlighted: {
+                      backgroundColor: "#8B5CF6",
+                      color: "white",
+                      fontWeight: "bold"
+                    }
+                  }}
                 />
+                
+                <div className="mt-4">
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="w-4 h-4 rounded-full bg-[#8B5CF6]"></div>
+                    <span className="text-sm">Curso Apertura Intervenciones</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-4 h-4 rounded-full bg-blue-100 border border-blue-400"></div>
+                    <span className="text-sm">Otros eventos</span>
+                  </div>
+                </div>
               </CardContent>
             </Card>
           </div>
@@ -96,9 +164,27 @@ const CalendarioPage = () => {
                 {selectedDateEvents.length > 0 ? (
                   <div className="space-y-4">
                     {selectedDateEvents.map(event => (
-                      <div key={event.id} className="border-b pb-4 last:border-0">
-                        <h3 className="text-lg font-medium">{event.title}</h3>
-                        <p className="text-gray-600">{event.description}</p>
+                      <div 
+                        key={event.id} 
+                        className={`border-b pb-4 last:border-0 ${event.highlighted ? 'bg-purple-50 p-4 rounded-md border border-purple-200' : ''}`}
+                      >
+                        <h3 className={`text-lg font-medium ${event.highlighted ? 'text-purple-800' : ''}`}>
+                          {event.title}
+                        </h3>
+                        <p className={event.highlighted ? 'text-purple-700' : 'text-gray-600'}>
+                          {event.description}
+                        </p>
+                        
+                        {event.highlighted && (
+                          <div className="mt-3">
+                            <Link 
+                              to="/cursos"
+                              className="text-[#8B5CF6] hover:text-[#7E69AB] font-medium underline"
+                            >
+                              Ver detalles del curso
+                            </Link>
+                          </div>
+                        )}
                       </div>
                     ))}
                   </div>
