@@ -117,7 +117,7 @@ const Sidebar = () => {
           />
         </div>
         
-        {/* Buscador con funcionalidad */}
+        {/* Buscador con funcionalidad - Removed the X button */}
         <form onSubmit={handleSearch} className="relative">
           <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
             <Search className="h-4 w-4 text-gray-400" />
@@ -125,13 +125,13 @@ const Sidebar = () => {
           <Input
             type="search"
             placeholder="Buscar..."
-            className="pl-10 w-full pr-10"
+            className="pl-10 w-full"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
           <button 
             type="submit" 
-            className="absolute inset-y-0 right-0 pr-3 flex items-center text-sm text-primary hover:text-primary-dark"
+            className="absolute inset-y-0 right-0 px-3 flex items-center text-sm text-primary hover:text-primary-dark"
           >
             Buscar
           </button>
