@@ -108,8 +108,7 @@ const Sidebar = () => {
         block: 'center' 
       });
       
-      // Eliminar los resaltados después de 3 segundos
-      setTimeout(removeHighlights, 3000);
+      // Eliminado el temporizador para que las coincidencias permanezcan resaltadas hasta que se limpie la búsqueda
     }
   };
   
@@ -124,6 +123,12 @@ const Sidebar = () => {
       }
     });
     highlightedElementsRef.current = [];
+  };
+  
+  // Manejador de limpieza del texto de búsqueda
+  const handleClearSearch = () => {
+    setSearchTerm('');
+    removeHighlights();
   };
   
   // Create a separate button click handler that doesn't trigger form submission
@@ -159,10 +164,10 @@ const Sidebar = () => {
             onChange={(e) => setSearchTerm(e.target.value)}
           />
           <Button 
-            type="button" // Changed from "submit" to "button"
+            type="button" 
             variant="ghost"
             className="absolute inset-y-0 right-0 px-3 flex items-center text-sm text-primary hover:text-primary-dark"
-            onClick={handleSearchButtonClick} // Use the dedicated click handler
+            onClick={handleSearchButtonClick}
           >
             Buscar
           </Button>
