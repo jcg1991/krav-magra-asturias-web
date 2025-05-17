@@ -5,7 +5,7 @@ import { Search } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 
 const Sidebar = () => {
-  // Track multiple submenus with an object instead of a single string
+  // Track multiple submenus with an object
   const [openSubmenus, setOpenSubmenus] = useState<{
     [key: string]: boolean;
   }>({
@@ -14,6 +14,8 @@ const Sidebar = () => {
     "katas": false
   });
   
+  const [searchTerm, setSearchTerm] = useState('');
+  
   const toggleSubmenu = (submenu: string) => {
     setOpenSubmenus(prev => ({
       ...prev,
@@ -21,19 +23,119 @@ const Sidebar = () => {
     }));
   };
   
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (searchTerm.trim()) {
+      // Implementar la búsqueda en la página
+      const searchText = searchTerm.toLowerCase();
+      const bodyText = document.body.innerText.toLowerCase();
+      
+      if (bodyText.includes(searchText)) {
+        // Crear un resaltado temporal de las coincidencias
+        const textNodes = [];
+        const walker = document.createTreeWalker(
+          document.body,
+          NodeFilter.SHOW_TEXT,
+          null
+        );
+
+        let node;
+        while (node = walker.nextNode()) {
+          if (node.textContent && node.textContent.toLowerCase().includes(searchText)) {
+            textNodes.push(node);
+          }
+        }
+
+        // Resaltar las coincidencias
+        const highlightClass = 'bg-yellow-300';
+        const highlights = [];
+
+        textNodes.forEach(textNode => {
+          const text = textNode.textContent || '';
+          const parent = textNode.parentNode;
+          
+          if (parent && text.toLowerCase().includes(searchText)) {
+            const fragment = document.createDocumentFragment();
+            let currentText = text;
+            let lastIndex = 0;
+            const regex = new RegExp(searchText, 'gi');
+            let match;
+            
+            while ((match = regex.exec(text)) !== null) {
+              // Texto antes de la coincidencia
+              if (match.index > lastIndex) {
+                fragment.appendChild(
+                  document.createTextNode(currentText.substring(lastIndex, match.index))
+                );
+              }
+              
+              // Texto de la coincidencia resaltado
+              const highlightSpan = document.createElement('span');
+              highlightSpan.classList.add(highlightClass);
+              highlightSpan.textContent = match[0];
+              fragment.appendChild(highlightSpan);
+              highlights.push(highlightSpan);
+              
+              lastIndex = regex.lastIndex;
+            }
+            
+            // Texto restante después de la última coincidencia
+            if (lastIndex < currentText.length) {
+              fragment.appendChild(
+                document.createTextNode(currentText.substring(lastIndex))
+              );
+            }
+            
+            if (parent) {
+              parent.replaceChild(fragment, textNode);
+            }
+          }
+        });
+
+        // Desplazarse al primer resultado
+        if (highlights.length > 0) {
+          highlights[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+          
+          // Eliminar los resaltados después de unos segundos
+          setTimeout(() => {
+            window.location.reload(); // Manera sencilla de restaurar la página
+          }, 3000);
+        }
+      }
+    }
+  };
+  
   return (
     <aside className="w-64 bg-gray-50 border-r min-h-screen">
       <div className="px-4 py-5">
-        <div className="relative">
+        {/* Logo encima del buscador */}
+        <div className="flex justify-center mb-4">
+          <img 
+            src="/lovable-uploads/1f06ec5f-c163-4470-baca-abdb5a7bf145.png" 
+            alt="Logo Internacional Police Association" 
+            className="w-40 h-auto"
+          />
+        </div>
+        
+        {/* Buscador con funcionalidad */}
+        <form onSubmit={handleSearch} className="relative">
           <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
             <Search className="h-4 w-4 text-gray-400" />
           </div>
           <Input
             type="search"
             placeholder="Buscar..."
-            className="pl-10 w-full"
+            className="pl-10 w-full pr-10"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
           />
-        </div>
+          <button 
+            type="submit" 
+            className="absolute inset-y-0 right-0 pr-3 flex items-center text-sm text-primary hover:text-primary-dark"
+          >
+            Buscar
+          </button>
+        </form>
       </div>
       
       <div className="mt-2">
