@@ -1,9 +1,8 @@
-
-import React, { useState, useRef } from 'react';
-import { Link } from 'react-router-dom';
-import { Search } from 'lucide-react';
-import { Input } from '@/components/ui/input';
-import { Button } from '@/components/ui/button';
+import React, { useState } from 'react';
+import SearchBar from './sidebar/SearchBar';
+import SubmenuItem from './sidebar/SubmenuItem';
+import MenuLink from './sidebar/MenuLink';
+import SidebarNavLink from './sidebar/SidebarNavLink';
 
 const Sidebar = () => {
   // Track multiple submenus with an object
@@ -15,128 +14,11 @@ const Sidebar = () => {
     "katas": false
   });
   
-  const [searchTerm, setSearchTerm] = useState('');
-  // Referencia para almacenar los elementos resaltados
-  const highlightedElementsRef = useRef<HTMLElement[]>([]);
-  
   const toggleSubmenu = (submenu: string) => {
     setOpenSubmenus(prev => ({
       ...prev,
       [submenu]: !prev[submenu]
     }));
-  };
-  
-  // Revised search handler to ensure it doesn't cause page reload
-  const handleSearch = (e: React.FormEvent) => {
-    // Ensure the default form submission behavior is prevented
-    e.preventDefault();
-    
-    // Eliminar resaltados anteriores
-    removeHighlights();
-    
-    if (!searchTerm.trim()) return;
-    
-    const searchText = searchTerm.toLowerCase();
-    
-    // Buscar en el contenido de la página
-    const textNodes: Node[] = [];
-    const walker = document.createTreeWalker(
-      document.body,
-      NodeFilter.SHOW_TEXT,
-      null
-    );
-    
-    let node;
-    while (node = walker.nextNode()) {
-      if (node.textContent && node.textContent.toLowerCase().includes(searchText)) {
-        textNodes.push(node);
-      }
-    }
-    
-    if (textNodes.length === 0) return;
-    
-    // Crear resaltados
-    const newHighlights: HTMLElement[] = [];
-    
-    textNodes.forEach(textNode => {
-      const text = textNode.textContent || '';
-      const parent = textNode.parentNode;
-      
-      if (parent && text.toLowerCase().includes(searchText)) {
-        const fragment = document.createDocumentFragment();
-        let lastIndex = 0;
-        const regex = new RegExp(searchText, 'gi');
-        let match;
-        
-        while ((match = regex.exec(text)) !== null) {
-          // Texto antes de la coincidencia
-          if (match.index > lastIndex) {
-            fragment.appendChild(
-              document.createTextNode(text.substring(lastIndex, match.index))
-            );
-          }
-          
-          // Texto resaltado
-          const highlightSpan = document.createElement('span');
-          highlightSpan.className = 'bg-yellow-300';
-          highlightSpan.textContent = match[0];
-          fragment.appendChild(highlightSpan);
-          newHighlights.push(highlightSpan);
-          
-          lastIndex = regex.lastIndex;
-        }
-        
-        // Texto después de la última coincidencia
-        if (lastIndex < text.length) {
-          fragment.appendChild(
-            document.createTextNode(text.substring(lastIndex))
-          );
-        }
-        
-        // Reemplazar nodo de texto original con el fragmento
-        parent.replaceChild(fragment, textNode);
-      }
-    });
-    
-    // Guardar referencias a los resaltados
-    highlightedElementsRef.current = newHighlights;
-    
-    // Desplazar a la primera coincidencia
-    if (newHighlights.length > 0) {
-      newHighlights[0].scrollIntoView({ 
-        behavior: 'smooth', 
-        block: 'center' 
-      });
-      
-      // Eliminado el temporizador para que las coincidencias permanezcan resaltadas hasta que se limpie la búsqueda
-    }
-  };
-  
-  // Función para eliminar los resaltados
-  const removeHighlights = () => {
-    highlightedElementsRef.current.forEach(highlight => {
-      const parent = highlight.parentNode;
-      if (parent) {
-        const text = highlight.textContent || '';
-        const textNode = document.createTextNode(text);
-        parent.replaceChild(textNode, highlight);
-      }
-    });
-    highlightedElementsRef.current = [];
-  };
-  
-  // Manejador de limpieza del texto de búsqueda
-  const handleClearSearch = () => {
-    setSearchTerm('');
-    removeHighlights();
-  };
-  
-  // Create a separate button click handler that doesn't trigger form submission
-  const handleSearchButtonClick = (e: React.MouseEvent) => {
-    // Stop the click from bubbling up to the form
-    e.stopPropagation();
-    // Call the search function directly
-    handleSearch(e as unknown as React.FormEvent);
   };
   
   return (
@@ -151,116 +33,83 @@ const Sidebar = () => {
           />
         </div>
         
-        {/* Buscador con manejo correcto de eventos */}
-        <form onSubmit={handleSearch} className="relative">
-          <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-            <Search className="h-4 w-4 text-gray-400" />
-          </div>
-          <Input
-            type="text"
-            placeholder="Buscar..."
-            className="pl-10 pr-16 w-full"
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
-          <Button 
-            type="button" 
-            variant="ghost"
-            className="absolute inset-y-0 right-0 px-3 flex items-center text-sm text-primary hover:text-primary-dark"
-            onClick={handleSearchButtonClick}
-          >
-            Buscar
-          </Button>
-        </form>
+        {/* Search bar component */}
+        <SearchBar />
       </div>
       
       <div className="mt-2">
         <div className="px-4 py-2 text-sm font-semibold text-gray-600">CURSOS</div>
         
         {/* PROGRAMA NACIONAL D. P. POLICIAL */}
-        <div>
-          <button
-            onClick={() => toggleSubmenu("programa-nacional")}
-            className="w-full text-left py-2 px-4 font-medium text-sm flex justify-between items-center hover:bg-gray-100"
-          >
-            <span>PROGRAMA NACIONAL D. P. POLICIAL</span>
-            <span>{openSubmenus["programa-nacional"] ? "−" : "+"}</span>
-          </button>
+        <SubmenuItem 
+          title="PROGRAMA NACIONAL D. P. POLICIAL"
+          isOpen={openSubmenus["programa-nacional"]}
+          onToggle={() => toggleSubmenu("programa-nacional")}
+        >
+          {/* PROGRAMA TECNICO */}
+          <div className="ml-4 border-l-2 border-gray-200">
+            <SubmenuItem
+              title="PROGRAMA TÉCNICO"
+              isOpen={openSubmenus["programa-tecnico"]}
+              onToggle={() => toggleSubmenu("programa-tecnico")}
+            >
+              <div className="pl-4">
+                <div className="py-1 px-4 text-sm font-medium text-gray-700">HASTA C.N. 3º DAN</div>
+                <MenuLink href="http://bootcampspain.es/wp-content/uploads/DPPCN1DANDPPCOMPLETO.pdf">
+                  Descargar 1er DAN
+                </MenuLink>
+                <MenuLink href="https://defensapolicial.es/wp-content/uploads/PROGRAMA-2-DAN-DPP.pdf">
+                  Descargar 2º DAN
+                </MenuLink>
+                <MenuLink href="http://bootcampspain.es/wp-content/uploads/PROGRAMA3DANDPP.pdf">
+                  Descargar 3er DAN
+                </MenuLink>
+              </div>
+            </SubmenuItem>
+          </div>
           
-          {openSubmenus["programa-nacional"] && (
-            <div>
-              {/* PROGRAMA TECNICO */}
-              <div className="ml-4 border-l-2 border-gray-200">
-                <button
-                  onClick={() => toggleSubmenu("programa-tecnico")}
-                  className="w-full text-left py-2 px-4 font-medium text-sm flex justify-between items-center hover:bg-gray-100"
-                >
-                  <span>PROGRAMA TÉCNICO</span>
-                  <span>{openSubmenus["programa-tecnico"] ? "−" : "+"}</span>
-                </button>
-                
-                {openSubmenus["programa-tecnico"] && (
-                  <div className="pl-4">
-                    <div className="py-1 px-4 text-sm font-medium text-gray-700">HASTA C.N. 3º DAN</div>
-                    <a href="http://bootcampspain.es/wp-content/uploads/DPPCN1DANDPPCOMPLETO.pdf" target="_blank" rel="noopener noreferrer" className="block py-1 px-6 text-sm text-blue-600 hover:underline">Descargar 1er DAN</a>
-                    <a href="https://defensapolicial.es/wp-content/uploads/PROGRAMA-2-DAN-DPP.pdf" target="_blank" rel="noopener noreferrer" className="block py-1 px-6 text-sm text-blue-600 hover:underline">Descargar 2º DAN</a>
-                    <a href="http://bootcampspain.es/wp-content/uploads/PROGRAMA3DANDPP.pdf" target="_blank" rel="noopener noreferrer" className="block py-1 px-6 text-sm text-blue-600 hover:underline">Descargar 3er DAN</a>
-                  </div>
-                )}
+          {/* KATAS DE DEFENSA */}
+          <div className="ml-4 border-l-2 border-gray-200">
+            <SubmenuItem
+              title="KATAS DE DEFENSA PERSONAL POLICIAL"
+              isOpen={openSubmenus["katas"]}
+              onToggle={() => toggleSubmenu("katas")}
+            >
+              <div className="pl-4">
+                <MenuLink href="http://bootcampspain.es/wp-content/uploads/1KATADPP.pdf">
+                  Descargar 1era KATA
+                </MenuLink>
+                <MenuLink href="https://defensapolicial.es/wp-content/uploads/2a-KATA-DPP.pdf">
+                  Descargar 2ª KATA
+                </MenuLink>
+                <MenuLink href="https://defensapolicial.es/wp-content/uploads/3a-KATA-DPP..pdf">
+                  Descargar 3era KATA
+                </MenuLink>
               </div>
-              
-              {/* KATAS DE DEFENSA */}
-              <div className="ml-4 border-l-2 border-gray-200">
-                <button
-                  onClick={() => toggleSubmenu("katas")}
-                  className="w-full text-left py-2 px-4 font-medium text-sm flex justify-between items-center hover:bg-gray-100"
-                >
-                  <span>KATAS DE DEFENSA PERSONAL POLICIAL</span>
-                  <span>{openSubmenus["katas"] ? "−" : "+"}</span>
-                </button>
-                
-                {openSubmenus["katas"] && (
-                  <div className="pl-4">
-                    <a href="http://bootcampspain.es/wp-content/uploads/1KATADPP.pdf" target="_blank" rel="noopener noreferrer" className="block py-1 px-6 text-sm text-blue-600 hover:underline">Descargar 1era KATA</a>
-                    <a href="https://defensapolicial.es/wp-content/uploads/2a-KATA-DPP.pdf" target="_blank" rel="noopener noreferrer" className="block py-1 px-6 text-sm text-blue-600 hover:underline">Descargar 2ª KATA</a>
-                    <a href="https://defensapolicial.es/wp-content/uploads/3a-KATA-DPP..pdf" target="_blank" rel="noopener noreferrer" className="block py-1 px-6 text-sm text-blue-600 hover:underline">Descargar 3era KATA</a>
-                  </div>
-                )}
-              </div>
-            </div>
-          )}
-        </div>
+            </SubmenuItem>
+          </div>
+        </SubmenuItem>
         
         {/* Other Courses */}
-        <div className="px-4 py-1">
-          <Link to="/curso-inmuebles" className="sidebar-menu-item">
-            CURSO APERTURA INTERVENCIONES EN INMUEBLES
-          </Link>
-        </div>
+        <SidebarNavLink to="/curso-inmuebles">
+          CURSO APERTURA INTERVENCIONES EN INMUEBLES
+        </SidebarNavLink>
         
-        <div className="px-4 py-1">
-          <Link to="/curso-autoproteccion" className="sidebar-menu-item">
-            CURSO AUTOPROTECCIÓN CIVILES Y DEFENSA DEL HOGAR
-          </Link>
-        </div>
+        <SidebarNavLink to="/curso-autoproteccion">
+          CURSO AUTOPROTECCIÓN CIVILES Y DEFENSA DEL HOGAR
+        </SidebarNavLink>
         
-        <div className="px-4 py-1">
-          <Link to="/cursos-especiales" className="sidebar-menu-item">
-            CURSOS ESPECIALES 2025
-          </Link>
-        </div>
+        <SidebarNavLink to="/cursos-especiales">
+          CURSOS ESPECIALES 2025
+        </SidebarNavLink>
         
-        <div className="px-4 py-1">
-          <Link to="/curso-inmuebles-urbano" className="sidebar-menu-item">
-            CURSO INTERVENCIÓN EN INMUEBLES Y ZONAS URBANIZADAS
-          </Link>
-        </div>
+        <SidebarNavLink to="/curso-inmuebles-urbano">
+          CURSO INTERVENCIÓN EN INMUEBLES Y ZONAS URBANIZADAS
+        </SidebarNavLink>
         
-        <div className="px-4 py-1">
-          <Link to="/curso-legion" className="sidebar-menu-item text-xs">
-            CURSO INTERVENCIÓN POLICIAL X BANDERA MILLAN ASTRAY – LEGIÓN ESPAÑOLA
-          </Link>
-        </div>
+        <SidebarNavLink to="/curso-legion" className="text-xs">
+          CURSO INTERVENCIÓN POLICIAL X BANDERA MILLAN ASTRAY – LEGIÓN ESPAÑOLA
+        </SidebarNavLink>
       </div>
     </aside>
   );
