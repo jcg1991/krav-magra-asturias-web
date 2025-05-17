@@ -31,7 +31,7 @@ const Footer = () => {
               <li>Email: formacion@defensapolicial.es</li>
               <li>Teléfono: 655478818</li>
               <li>Dirección: C/Luis Adaro Ruiz-Falcó, 33203–Gijón</li>
-              <li><Link to="/contacto" className="text-primary-foreground hover:underline">Formulario de contacto</Link></li>
+              
             </ul>
           </div>
         </div>
