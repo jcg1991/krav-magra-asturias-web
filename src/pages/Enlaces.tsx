@@ -11,6 +11,24 @@ const Enlaces = () => {
         
         <div className="space-y-6">
           <div>
+            <h3 className="text-xl font-semibold mb-2">Sitios Oficiales</h3>
+            <ul className="list-disc pl-6 space-y-2">
+              <li><a href="https://defensapolicial.es/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Defensa Policial</a></li>
+              <li><a href="https://www.luchaasturias.es/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Lucha Asturias</a></li>
+              <li><a href="https://kravmagabootcamp.es/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Krav Maga Bootcamp</a></li>
+              <li><a href="https://www.gimnasioshotokan.es/index.php/id/34/claves/krav-maga-defensa-personal-israeli-gimnasio-gijon" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Gimnasio Shotokan</a></li>
+            </ul>
+          </div>
+          
+          <div>
+            <h3 className="text-xl font-semibold mb-2">Redes Sociales</h3>
+            <ul className="list-disc pl-6 space-y-2">
+              <li><a href="https://www.facebook.com/profile.php?id=100002385054891&ref=ts" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Facebook Personal</a></li>
+              <li><a href="https://www.facebook.com/kravmaga.asturias/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Facebook Krav Maga Asturias</a></li>
+            </ul>
+          </div>
+          
+          <div>
             <h3 className="text-xl font-semibold mb-2">Federaciones y Asociaciones</h3>
             <ul className="list-disc pl-6 space-y-2">
               <li><a href="#" className="text-blue-600 hover:underline">Federación Española de Krav Maga</a></li>
