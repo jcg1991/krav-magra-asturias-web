@@ -2,12 +2,17 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Search } from 'lucide-react';
 import { Input } from '@/components/ui/input';
+
+// Define the SubmenuType as a proper union type
 type SubmenuType = 'programa-nacional' | 'programa-tecnico' | 'katas' | null;
+
 const Sidebar = () => {
   const [openSubmenu, setOpenSubmenu] = useState<SubmenuType>("programa-nacional");
+  
   const toggleSubmenu = (submenu: SubmenuType) => {
     setOpenSubmenu(openSubmenu === submenu ? null : submenu);
   };
+  
   return <aside className="w-64 bg-gray-50 border-r min-h-screen">
       <div className="px-4 py-5">
         <div className="relative">
@@ -108,4 +113,5 @@ const Sidebar = () => {
       </div>
     </aside>;
 };
+
 export default Sidebar;
