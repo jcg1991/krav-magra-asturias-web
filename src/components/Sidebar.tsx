@@ -1,13 +1,24 @@
+
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Search } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 
 const Sidebar = () => {
-  const [openSubmenu, setOpenSubmenu] = useState<string | null>("programa-nacional");
+  // Track multiple submenus with an object instead of a single string
+  const [openSubmenus, setOpenSubmenus] = useState<{
+    [key: string]: boolean;
+  }>({
+    "programa-nacional": true,
+    "programa-tecnico": false,
+    "katas": false
+  });
   
   const toggleSubmenu = (submenu: string) => {
-    setOpenSubmenu(openSubmenu === submenu ? null : submenu);
+    setOpenSubmenus(prev => ({
+      ...prev,
+      [submenu]: !prev[submenu]
+    }));
   };
   
   return (
@@ -35,10 +46,10 @@ const Sidebar = () => {
             className="w-full text-left py-2 px-4 font-medium text-sm flex justify-between items-center hover:bg-gray-100"
           >
             <span>PROGRAMA NACIONAL D. P. POLICIAL</span>
-            <span>{openSubmenu === "programa-nacional" ? "−" : "+"}</span>
+            <span>{openSubmenus["programa-nacional"] ? "−" : "+"}</span>
           </button>
           
-          {openSubmenu === "programa-nacional" && (
+          {openSubmenus["programa-nacional"] && (
             <div>
               {/* PROGRAMA TECNICO */}
               <div className="ml-4 border-l-2 border-gray-200">
@@ -47,10 +58,10 @@ const Sidebar = () => {
                   className="w-full text-left py-2 px-4 font-medium text-sm flex justify-between items-center hover:bg-gray-100"
                 >
                   <span>PROGRAMA TÉCNICO</span>
-                  <span>{openSubmenu === "programa-tecnico" ? "−" : "+"}</span>
+                  <span>{openSubmenus["programa-tecnico"] ? "−" : "+"}</span>
                 </button>
                 
-                {openSubmenu === "programa-tecnico" && (
+                {openSubmenus["programa-tecnico"] && (
                   <div className="pl-4">
                     <div className="py-1 px-4 text-sm font-medium text-gray-700">HASTA C.N. 3º DAN</div>
                     <a href="#" className="block py-1 px-6 text-sm text-blue-600 hover:underline">Descargar 1er DAN</a>
@@ -67,10 +78,10 @@ const Sidebar = () => {
                   className="w-full text-left py-2 px-4 font-medium text-sm flex justify-between items-center hover:bg-gray-100"
                 >
                   <span>KATAS DE DEFENSA PERSONAL POLICIAL</span>
-                  <span>{openSubmenu === "katas" ? "−" : "+"}</span>
+                  <span>{openSubmenus["katas"] ? "−" : "+"}</span>
                 </button>
                 
-                {openSubmenu === "katas" && (
+                {openSubmenus["katas"] && (
                   <div className="pl-4">
                     <a href="#" className="block py-1 px-6 text-sm text-blue-600 hover:underline">Descargar 1era KATA</a>
                     <a href="#" className="block py-1 px-6 text-sm text-blue-600 hover:underline">Descargar 2ª KATA</a>
