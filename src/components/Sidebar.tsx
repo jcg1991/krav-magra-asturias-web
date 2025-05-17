@@ -100,7 +100,7 @@ const Sidebar = () => {
         </div>
         
         {/* Other Courses */}
-        <SidebarNavLink to="/cursos" id="curso-inmuebles">
+        <SidebarNavLink to="/cursos">
           CURSO APERTURA INTERVENCIONES EN INMUEBLES
         </SidebarNavLink>
         
