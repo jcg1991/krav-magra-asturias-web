@@ -1,9 +1,17 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
+import Informate from "./pages/Informate";
+import KravMaga from "./pages/KravMaga";
+import Clases from "./pages/Clases";
+import Areas from "./pages/Areas";
+import Tecnicas from "./pages/Tecnicas";
+import Contacto from "./pages/Contacto";
+import Enlaces from "./pages/Enlaces";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -16,6 +24,13 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/informate" element={<Informate />} />
+          <Route path="/krav-maga" element={<KravMaga />} />
+          <Route path="/clases" element={<Clases />} />
+          <Route path="/areas" element={<Areas />} />
+          <Route path="/tecnicas" element={<Tecnicas />} />
+          <Route path="/contacto" element={<Contacto />} />
+          <Route path="/enlaces" element={<Enlaces />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
