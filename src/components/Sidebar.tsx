@@ -90,6 +90,15 @@ const Sidebar = () => {
           </div>
         </SubmenuItem>
         
+        {/* Krav Maga Boot Camp Image - Added here between Katas and Curso apertura */}
+        <div className="px-4 py-3">
+          <img 
+            src="/lovable-uploads/f9d6ae12-56ee-4019-a1ae-24e414ad4504.png" 
+            alt="Krav Maga Boot Camp" 
+            className="w-full h-auto rounded-md shadow-sm" 
+          />
+        </div>
+        
         {/* Other Courses */}
         <SidebarNavLink to="/curso-inmuebles">
           CURSO APERTURA INTERVENCIONES EN INMUEBLES
