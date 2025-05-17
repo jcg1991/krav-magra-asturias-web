@@ -1,10 +1,7 @@
-
 import React from 'react';
 import Layout from '../components/Layout';
-
 const Enlaces = () => {
-  return (
-    <Layout>
+  return <Layout>
       <h1 className="text-3xl font-bold text-primary mb-6">Enlaces</h1>
       <div className="bg-white rounded-lg shadow-md p-6">
         <h2 className="text-2xl font-bold text-secondary mb-4">Enlaces de Interés</h2>
@@ -46,18 +43,9 @@ const Enlaces = () => {
             </ul>
           </div>
           
-          <div>
-            <h3 className="text-xl font-semibold mb-2">Centros Colaboradores</h3>
-            <ul className="list-disc pl-6 space-y-2">
-              <li><a href="#" className="text-blue-600 hover:underline">Centro de Entrenamiento Madrid</a></li>
-              <li><a href="#" className="text-blue-600 hover:underline">Academia Barcelona</a></li>
-              <li><a href="#" className="text-blue-600 hover:underline">Centro de Formación Valencia</a></li>
-            </ul>
-          </div>
+          
         </div>
       </div>
-    </Layout>
-  );
+    </Layout>;
 };
-
 export default Enlaces;
