@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Search } from 'lucide-react';
+import { Search, X } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 
 const Sidebar = () => {
@@ -15,6 +15,7 @@ const Sidebar = () => {
   });
   
   const [searchTerm, setSearchTerm] = useState('');
+  const [isSearchFocused, setIsSearchFocused] = useState(false);
   
   const toggleSubmenu = (submenu: string) => {
     setOpenSubmenus(prev => ({
@@ -104,6 +105,11 @@ const Sidebar = () => {
       }
     }
   };
+
+  const clearSearch = () => {
+    setSearchTerm('');
+    setIsSearchFocused(false);
+  };
   
   return (
     <aside className="w-64 bg-gray-50 border-r min-h-screen">
@@ -125,10 +131,20 @@ const Sidebar = () => {
           <Input
             type="search"
             placeholder="Buscar..."
-            className="pl-10 w-full pr-10"
+            className="pl-10 w-full"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
+            onFocus={() => setIsSearchFocused(true)}
           />
+          {searchTerm && (
+            <button 
+              type="button"
+              onClick={clearSearch}
+              className="absolute inset-y-0 right-10 pr-1 flex items-center text-sm text-gray-400 hover:text-gray-600"
+            >
+              <X className="h-4 w-4" />
+            </button>
+          )}
           <button 
             type="submit" 
             className="absolute inset-y-0 right-0 pr-3 flex items-center text-sm text-primary hover:text-primary-dark"
