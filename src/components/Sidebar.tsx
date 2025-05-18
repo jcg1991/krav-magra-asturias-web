@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import SearchBar from './sidebar/SearchBar';
 import SubmenuItem from './sidebar/SubmenuItem';
@@ -116,7 +117,7 @@ const Sidebar = () => {
           CURSOS ESPECIALES 2025
         </SidebarNavLink>
         
-        <SidebarNavLink to="/curso-legion" className="text-xs">
+        <SidebarNavLink to="/cursos" id="curso-legion" className="text-xs">
           CURSO INTERVENCIÓN POLICIAL X BANDERA MILLAN ASTRAY – LEGIÓN ESPAÑOLA
         </SidebarNavLink>
       </div>
