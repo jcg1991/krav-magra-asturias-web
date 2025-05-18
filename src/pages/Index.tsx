@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Layout from '../components/Layout';
 import { Link } from 'react-router-dom';
@@ -65,6 +66,24 @@ const Index = () => {
                 <p>E-MAIL: formacion@defensapolicial.es</p>
                 <p>www.defensapolicial.es</p>
                 <p className="mt-4 font-bold">* VER MÁS EN*: <Link to="/cursos" className="text-blue-600 hover:underline" onClick={handleScrollToTop}>CURSO APERTURAS INMUEBLES</Link></p>
+              </div>
+            </div>
+            
+            {/* NEW: News Item for Curso Intervención en Inmuebles */}
+            <div className="border-b pb-4">
+              <h3 className="text-lg font-medium text-center">CURSO INTERVENCIÓN EN INMUEBLES Y ZONAS URBANIZADAS</h3>
+              <div className="flex flex-col items-center mt-3 mb-3">
+                <img src="/lovable-uploads/0771f624-8a28-4e01-ac4e-a5842f94e65f.png" alt="Intervención en Inmuebles y Zonas Urbanizadas" className="rounded-lg max-w-full h-auto mb-2" />
+              </div>
+              <div className="mt-4 space-y-2">
+                <p><strong>FECHA:</strong> 11, 12 DE ENERO DE 2025</p>
+                <p><strong>DIPLOMA / CERTIFICADO:</strong> Oficial y Baremable</p>
+                <p><strong>PLAZAS:</strong> Limitadas</p>
+                <p><strong>INFORMACIÓN / INSCRIPCIONES:</strong></p>
+                <p>TFNO.: 655478818</p>
+                <p>E-MAIL: formacion@defensapolicial.es</p>
+                <p>www.defensapolicial.es</p>
+                <p className="mt-4 font-bold">* VER MÁS EN*: <Link to="/curso-inmuebles-urbano" className="text-blue-600 hover:underline" onClick={handleScrollToTop}>CURSO INTERVENCIÓN EN INMUEBLES Y ZONAS URBANIZADAS</Link></p>
               </div>
             </div>
             

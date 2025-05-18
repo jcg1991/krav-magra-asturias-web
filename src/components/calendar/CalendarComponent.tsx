@@ -13,7 +13,7 @@ interface CalendarComponentProps {
 
 const CalendarComponent = ({ date, setDate, events }: CalendarComponentProps) => {
   return (
-    <Card>
+    <Card className="h-full">
       <CardHeader>
         <CardTitle>Selecciona una fecha</CardTitle>
       </CardHeader>
@@ -32,6 +32,9 @@ const CalendarComponent = ({ date, setDate, events }: CalendarComponentProps) =>
               .map(event => new Date(event.date)),
             autoproteccion: events
               .filter(event => event.type === 'autoproteccion')
+              .map(event => new Date(event.date)),
+            urbano: events
+              .filter(event => event.type === 'urbano')
               .map(event => new Date(event.date))
           }}
           modifiersStyles={{
@@ -42,6 +45,11 @@ const CalendarComponent = ({ date, setDate, events }: CalendarComponentProps) =>
             },
             autoproteccion: {
               backgroundColor: "#F97316",
+              color: "white",
+              fontWeight: "bold"
+            },
+            urbano: {
+              backgroundColor: "#059669",
               color: "white",
               fontWeight: "bold"
             }
