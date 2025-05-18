@@ -4,6 +4,7 @@ import Layout from '../components/Layout';
 import IntroductionSection from '../components/home/IntroductionSection';
 import FeaturesGrid from '../components/home/FeaturesGrid';
 import LatestNewsSection from '../components/news/LatestNewsSection';
+import InternationalRecognitionSection from '../components/home/InternationalRecognitionSection';
 
 const Index = () => {
   return (
@@ -17,6 +18,9 @@ const Index = () => {
         
         {/* Features Grid */}
         <FeaturesGrid />
+        
+        {/* International Recognition Section */}
+        <InternationalRecognitionSection />
         
         {/* Latest News Section */}
         <LatestNewsSection />
