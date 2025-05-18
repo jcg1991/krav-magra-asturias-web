@@ -156,7 +156,7 @@ const Index = () => {
                   <img 
                     src="/lovable-uploads/0908978a-560e-4b67-b07b-220dd9873c34.png" 
                     alt="Bastones Policiales" 
-                    className="rounded-lg max-w-full h-auto max-h-64"
+                    className="rounded-lg max-w-full h-auto"
                   />
                 </div>
               </div>
