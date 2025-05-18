@@ -24,7 +24,7 @@ const EventsList = ({ date, events }: EventsListProps) => {
   const selectedDateEvents = getEventsForSelectedDate();
 
   return (
-    <Card className="h-full">
+    <Card className="max-h-[600px] overflow-y-auto">
       <CardHeader>
         <CardTitle>
           {date ? (
