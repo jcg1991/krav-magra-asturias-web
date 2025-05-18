@@ -1,15 +1,14 @@
-
 import React from 'react';
 import Layout from '../components/Layout';
 import { Link } from 'react-router-dom';
-
 const Index = () => {
   const handleScrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   };
-
-  return (
-    <Layout>
+  return <Layout>
       <div className="space-y-6">
         {/* Welcome Section */}
         <h1 className="text-3xl font-bold text-primary">Bienvenidos a Krav Maga Asturias</h1>
@@ -75,7 +74,7 @@ const Index = () => {
               <div className="flex flex-col items-center mt-3 mb-3">
                 <div className="grid grid-cols-2 gap-2">
                   <img src="/lovable-uploads/c383a2e7-3fd4-48cb-8b56-343da38ae2b1.png" alt="Autoprotección del hogar" className="rounded-lg max-w-full h-auto" />
-                  <img src="/lovable-uploads/fafb3b38-5f38-41da-acc1-df3250599a61.png" alt="Defensa personal en el hogar" className="rounded-lg max-w-full h-auto" />
+                  <img alt="Defensa personal en el hogar" className="rounded-lg max-w-full h-auto" src="/lovable-uploads/e77473a6-1550-4e5f-934b-11f21beab648.jpg" />
                 </div>
               </div>
               <div className="mt-4 space-y-2">
@@ -99,8 +98,6 @@ const Index = () => {
           </div>
         </div>
       </div>
-    </Layout>
-  );
+    </Layout>;
 };
-
 export default Index;
