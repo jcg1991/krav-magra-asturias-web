@@ -6,5 +6,5 @@ export interface CalendarEvent {
   date: Date;
   description: string;
   highlighted?: boolean;
-  type?: 'inmuebles' | 'autoproteccion';
+  type?: 'inmuebles' | 'autoproteccion' | 'inmuebles_urbano';
 }
