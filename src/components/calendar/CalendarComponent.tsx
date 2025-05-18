@@ -13,7 +13,7 @@ interface CalendarComponentProps {
 
 const CalendarComponent = ({ date, setDate, events }: CalendarComponentProps) => {
   return (
-    <Card>
+    <Card className="h-full">
       <CardHeader>
         <CardTitle>Selecciona una fecha</CardTitle>
       </CardHeader>

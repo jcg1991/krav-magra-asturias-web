@@ -80,6 +80,7 @@ const CursosPage = () => {
                   alt="Curso intervención en inmuebles" 
                   className="rounded-lg w-full h-auto shadow-md" 
                 />
+                <p className="mt-3 text-center font-medium">IMPARTIDO POR OPERATIVO UNIDAD ESPECIAL</p>
               </div>
               
               <div className="md:w-2/3 space-y-4">
@@ -98,10 +99,17 @@ const CursosPage = () => {
                     <p className="font-bold text-lg">PLAZAS:</p>
                     <p>Limitadas</p>
                   </div>
+                  
+                  <div className="bg-gray-50 p-4 rounded-md">
+                    <p className="font-bold text-lg">INFORMACIÓN / INSCRIPCIONES:</p>
+                    <p>TFNO.: 655478818</p>
+                    <p>E-MAIL: formacion@defensapolicial.es</p>
+                    <p>www.defensapolicial.es</p>
+                  </div>
                 </div>
                 
                 <div className="mt-6 flex justify-center">
-                  <Button size="lg" className="bg-[#8B5CF6] hover:bg-[#7E69AB]">
+                  <Button size="lg" className="bg-[#3B82F6] hover:bg-[#2563EB]">
                     <Link to="/curso-inmuebles-urbano" className="text-white">VER MÁS INFORMACIÓN</Link>
                   </Button>
                 </div>

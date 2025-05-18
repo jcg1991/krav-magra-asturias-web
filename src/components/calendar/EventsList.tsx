@@ -24,7 +24,7 @@ const EventsList = ({ date, events }: EventsListProps) => {
   const selectedDateEvents = getEventsForSelectedDate();
 
   return (
-    <Card>
+    <Card className="h-full">
       <CardHeader>
         <CardTitle>
           {date ? (
@@ -79,17 +79,21 @@ const EventsList = ({ date, events }: EventsListProps) => {
                 {event.highlighted && (
                   <div className="mt-3">
                     <Link 
-                      to={event.type === 'autoproteccion' 
-                        ? "/curso-autoproteccion" 
-                        : event.type === 'inmuebles_urbano'
-                          ? "/curso-inmuebles-urbano"
-                          : "/cursos"}
+                      to={
+                        event.type === 'autoproteccion' 
+                          ? "/curso-autoproteccion" 
+                          : event.type === 'inmuebles_urbano'
+                            ? "/curso-inmuebles-urbano"
+                            : "/cursos"
+                      }
                       className={
                         event.type === 'inmuebles' 
                           ? 'text-[#8B5CF6] hover:text-[#7E69AB] font-medium underline' 
                           : event.type === 'autoproteccion'
                             ? 'text-[#F97316] hover:text-[#EA580C] font-medium underline'
-                            : 'text-[#3B82F6] hover:text-[#2563EB] font-medium underline'
+                            : event.type === 'inmuebles_urbano'
+                              ? 'text-[#3B82F6] hover:text-[#2563EB] font-medium underline'
+                              : 'text-blue-600 hover:text-blue-800 font-medium underline'
                       }
                     >
                       Ver detalles del curso
