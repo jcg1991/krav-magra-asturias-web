@@ -13,8 +13,8 @@ interface CalendarComponentProps {
 
 const CalendarComponent = ({ date, setDate, events }: CalendarComponentProps) => {
   return (
-    <Card>
-      <CardHeader>
+    <Card className="h-full">
+      <CardHeader className="pb-2">
         <CardTitle>Selecciona una fecha</CardTitle>
       </CardHeader>
       <CardContent className="pb-2">
@@ -22,7 +22,7 @@ const CalendarComponent = ({ date, setDate, events }: CalendarComponentProps) =>
           mode="single"
           selected={date}
           onSelect={setDate}
-          className="rounded-md border shadow"
+          className="rounded-md border shadow w-full"
           modifiersClassNames={{
             selected: "bg-primary text-primary-foreground",
           }}
@@ -55,7 +55,7 @@ const CalendarComponent = ({ date, setDate, events }: CalendarComponentProps) =>
             }
           }}
         />
-        <div className="mt-2">
+        <div className="mt-4">
           <CalendarLegend />
         </div>
       </CardContent>
