@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Layout from '../components/Layout';
 import { Link } from 'react-router-dom';
@@ -147,7 +148,7 @@ const Index = () => {
             <div className="border-b pb-4">
               <h3 className="text-lg font-medium text-center">CURSO BASTÓN POLICIAL Y CENA GALA 2024</h3>
               <div className="flex flex-col items-center mt-3 mb-3">
-                <div className="grid grid-cols-1 gap-4">
+                <div className="flex flex-col items-center gap-4">
                   <img 
                     src="/lovable-uploads/75b4984a-a52f-4e45-a743-339ec427bd6f.png" 
                     alt="Cena de Gala Defensa Personal Policial Krav Maga" 
