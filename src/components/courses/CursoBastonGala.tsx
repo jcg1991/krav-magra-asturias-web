@@ -20,12 +20,12 @@ const CursoBastonGala = () => {
           />
         </div>
         
-        {/* Second Image - Baston Policial */}
+        {/* Second Image - Baston Policial - Modified to match first image width */}
         <div className="flex justify-center mb-6">
           <img 
             src="/lovable-uploads/0908978a-560e-4b67-b07b-220dd9873c34.png" 
             alt="Bastones Policiales" 
-            className="rounded-lg shadow-md max-w-full h-auto max-h-64"
+            className="rounded-lg shadow-md max-w-full h-auto"
           />
         </div>
         
