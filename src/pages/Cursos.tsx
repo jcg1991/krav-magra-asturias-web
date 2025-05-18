@@ -9,6 +9,7 @@ import CursoLegion from '../components/courses/CursoLegion';
 import ProximosCursos from '../components/courses/ProximosCursos';
 import CursoBastonGala from '../components/courses/CursoBastonGala';
 import CursoContraterrorismo from '../components/courses/CursoContraterrorismo';
+import CursoEntrenadorKravMaga from '../components/courses/CursoEntrenadorKravMaga';
 
 const CursosPage = () => {
   return (
@@ -28,6 +29,9 @@ const CursosPage = () => {
         
         {/* New Contraterrorismo course */}
         <CursoContraterrorismo />
+        
+        {/* New Entrenador Nacional Krav Maga course */}
+        <CursoEntrenadorKravMaga />
         
         {/* Próximos Cursos Notice */}
         <ProximosCursos />

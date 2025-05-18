@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import SearchBar from './sidebar/SearchBar';
 import SubmenuItem from './sidebar/SubmenuItem';
@@ -91,7 +90,7 @@ const Sidebar = () => {
           </div>
         </SubmenuItem>
         
-        {/* Krav Maga Boot Camp Image - Added here between Katas and Curso apertura */}
+        {/* Krav Maga Boot Camp Image */}
         <div className="px-4 py-3">
           <img 
             src="/lovable-uploads/f9d6ae12-56ee-4019-a1ae-24e414ad4504.png" 
@@ -127,6 +126,10 @@ const Sidebar = () => {
         
         <SidebarNavLink to="/cursos" id="curso-contraterrorismo" className="text-xs">
           CURSO CONTRATERRORISMO ISRAELÍ
+        </SidebarNavLink>
+        
+        <SidebarNavLink to="/cursos" id="curso-entrenador-kravmaga" className="text-xs">
+          CURSO ENTRENADOR NACIONAL KRAV MAGA
         </SidebarNavLink>
       </div>
     </aside>
