@@ -96,10 +96,10 @@
 
 /* Custom styles */
 .header-image {
-  background-size: contain;
+  background-image: url('/lovable-uploads/fa33c7f7-c404-4f0f-b619-4ed07f8e2809.png');
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-color: #003380;
 }
 
 .sidebar-menu-item {
