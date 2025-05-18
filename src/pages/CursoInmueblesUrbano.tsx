@@ -8,7 +8,7 @@ const CursoInmueblesUrbanoPage = () => {
   return (
     <Layout>
       <div className="space-y-6">
-        <h1 className="text-3xl font-bold text-primary">CURSO INTERVENCIÓN EN INMUEBLES Y ZONAS URBANIZADAS</h1>
+        <h1 className="text-3xl font-bold text-primary">Curso Intervención en Inmuebles y Zonas Urbanizadas</h1>
         
         <Card className="overflow-hidden">
           <CardHeader className="bg-primary/5">
@@ -18,10 +18,11 @@ const CursoInmueblesUrbanoPage = () => {
             <div className="flex flex-col md:flex-row gap-6">
               <div className="md:w-1/3 flex flex-col items-center">
                 <img 
-                  src="/lovable-uploads/0771f624-8a28-4e01-ac4e-a5842f94e65f.png" 
-                  alt="Intervención en Inmuebles y Zonas Urbanizadas" 
+                  src="/lovable-uploads/476d59f1-7e4a-4735-8d61-3912f94e1469.png" 
+                  alt="Curso intervención en inmuebles" 
                   className="rounded-lg w-full h-auto shadow-md" 
                 />
+                <p className="mt-3 text-center font-medium">IMPARTIDO POR OPERATIVO UNIDAD ESPECIAL EN APERTURAS</p>
               </div>
               
               <div className="md:w-2/3 space-y-4">
@@ -49,23 +50,22 @@ const CursoInmueblesUrbanoPage = () => {
                   </div>
                 </div>
                 
-                <div className="bg-yellow-50 p-4 rounded-md border-l-4 border-yellow-400">
-                  <h3 className="font-bold text-lg mb-2">DESCRIPCIÓN DEL CURSO</h3>
-                  <p>
-                    Curso especializado en técnicas de intervención táctica en inmuebles y zonas urbanizadas. 
-                    Dirigido a profesionales de seguridad y cuerpos policiales que necesitan desarrollar 
-                    habilidades para operaciones tácticas en entornos urbanos.
+                <div className="bg-blue-50 border-l-4 border-blue-400 p-4 rounded">
+                  <p className="text-blue-800">
+                    <span className="font-bold">Descripción del curso:</span> Este curso especializado está dirigido a profesionales de seguridad y militares que buscan mejorar sus habilidades tácticas en entornos urbanos y edificaciones. Se abordan técnicas avanzadas de entrada, desplazamiento y control de espacios cerrados.
                   </p>
                 </div>
                 
-                <div className="bg-blue-50 p-4 rounded-md border-l-4 border-blue-400">
-                  <h3 className="font-bold text-lg mb-2">CONTENIDOS</h3>
-                  <ul className="list-disc pl-5 space-y-1">
-                    <li>Protocolos de intervención en inmuebles</li>
-                    <li>Técnicas de control de accesos</li>
-                    <li>Seguridad en zonas urbanizadas</li>
-                    <li>Coordinación de equipos tácticos</li>
-                    <li>Ejercicios prácticos de simulación</li>
+                <div className="bg-green-50 border-l-4 border-green-400 p-4 rounded">
+                  <p className="text-green-800">
+                    <span className="font-bold">Contenidos principales:</span>
+                  </p>
+                  <ul className="list-disc pl-5 mt-2 text-green-800">
+                    <li>Tácticas de entrada en inmuebles</li>
+                    <li>Desplazamientos coordinados en equipo</li>
+                    <li>Cobertura y seguridad en espacios cerrados</li>
+                    <li>Gestión de amenazas en zonas urbanizadas</li>
+                    <li>Prácticas en escenarios reales</li>
                   </ul>
                 </div>
               </div>
@@ -73,17 +73,11 @@ const CursoInmueblesUrbanoPage = () => {
           </CardContent>
         </Card>
         
-        <Card>
-          <CardContent className="p-6">
-            <div className="flex justify-center">
-              <Button size="lg" className="bg-[#8B5CF6] hover:bg-[#7E69AB]">
-                <a href="mailto:formacion@defensapolicial.es?subject=Inscripción: CURSO INTERVENCIÓN EN INMUEBLES" className="text-white">
-                  SOLICITAR INSCRIPCIÓN
-                </a>
-              </Button>
-            </div>
-          </CardContent>
-        </Card>
+        <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded">
+          <p className="text-yellow-800">
+            <span className="font-bold">Importante:</span> Para inscribirse en este curso es necesario contactar directamente con la organización a través del teléfono o email proporcionados. Las plazas son limitadas y se asignan por orden de inscripción.
+          </p>
+        </div>
       </div>
     </Layout>
   );

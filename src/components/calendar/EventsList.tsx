@@ -48,7 +48,9 @@ const EventsList = ({ date, events }: EventsListProps) => {
                     ? 'bg-purple-50 p-4 rounded-md border border-purple-200' 
                     : event.type === 'autoproteccion'
                       ? 'bg-orange-50 p-4 rounded-md border border-orange-200'
-                      : ''
+                      : event.type === 'inmuebles_urbano'
+                        ? 'bg-blue-50 p-4 rounded-md border border-blue-200'
+                        : ''
                 }`}
               >
                 <h3 className={`text-lg font-medium ${
@@ -56,7 +58,9 @@ const EventsList = ({ date, events }: EventsListProps) => {
                     ? 'text-purple-800' 
                     : event.type === 'autoproteccion'
                       ? 'text-orange-800'
-                      : ''
+                      : event.type === 'inmuebles_urbano'
+                        ? 'text-blue-800'
+                        : ''
                 }`}>
                   {event.title}
                 </h3>
@@ -65,7 +69,9 @@ const EventsList = ({ date, events }: EventsListProps) => {
                     ? 'text-purple-700' 
                     : event.type === 'autoproteccion'
                       ? 'text-orange-700'
-                      : 'text-gray-600'
+                      : event.type === 'inmuebles_urbano'
+                        ? 'text-blue-700'
+                        : 'text-gray-600'
                 }>
                   {event.description}
                 </p>
@@ -73,11 +79,17 @@ const EventsList = ({ date, events }: EventsListProps) => {
                 {event.highlighted && (
                   <div className="mt-3">
                     <Link 
-                      to={event.type === 'autoproteccion' ? "/curso-autoproteccion" : "/cursos"}
+                      to={event.type === 'autoproteccion' 
+                        ? "/curso-autoproteccion" 
+                        : event.type === 'inmuebles_urbano'
+                          ? "/curso-inmuebles-urbano"
+                          : "/cursos"}
                       className={
                         event.type === 'inmuebles' 
                           ? 'text-[#8B5CF6] hover:text-[#7E69AB] font-medium underline' 
-                          : 'text-[#F97316] hover:text-[#EA580C] font-medium underline'
+                          : event.type === 'autoproteccion'
+                            ? 'text-[#F97316] hover:text-[#EA580C] font-medium underline'
+                            : 'text-[#3B82F6] hover:text-[#2563EB] font-medium underline'
                       }
                     >
                       Ver detalles del curso

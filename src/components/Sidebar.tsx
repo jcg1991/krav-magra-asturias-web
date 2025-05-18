@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import SearchBar from './sidebar/SearchBar';
 import SubmenuItem from './sidebar/SubmenuItem';
@@ -105,16 +104,16 @@ const Sidebar = () => {
           CURSO APERTURA INTERVENCIONES EN INMUEBLES
         </SidebarNavLink>
         
+        <SidebarNavLink to="/curso-inmuebles-urbano" id="curso-inmuebles-urbano" scrollToTop={true}>
+          CURSO INTERVENCIÓN EN INMUEBLES Y ZONAS URBANIZADAS
+        </SidebarNavLink>
+        
         <SidebarNavLink to="/cursos" id="curso-autoproteccion">
           CURSO AUTOPROTECCIÓN CIVILES Y DEFENSA DEL HOGAR
         </SidebarNavLink>
         
         <SidebarNavLink to="/cursos-especiales">
           CURSOS ESPECIALES 2025
-        </SidebarNavLink>
-        
-        <SidebarNavLink to="/curso-inmuebles-urbano">
-          CURSO INTERVENCIÓN EN INMUEBLES Y ZONAS URBANIZADAS
         </SidebarNavLink>
         
         <SidebarNavLink to="/curso-legion" className="text-xs">
