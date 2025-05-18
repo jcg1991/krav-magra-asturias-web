@@ -1,6 +1,7 @@
 import React from 'react';
 import Layout from '../components/Layout';
 import { Link } from 'react-router-dom';
+
 const Index = () => {
   const handleScrollToTop = () => {
     window.scrollTo({
@@ -8,6 +9,7 @@ const Index = () => {
       behavior: 'smooth'
     });
   };
+
   return <Layout>
       <div className="space-y-6">
         {/* Welcome Section */}
@@ -140,9 +142,43 @@ const Index = () => {
                 <p className="mt-4 font-bold">* VER MÁS EN*: <Link to="/curso-legion" className="text-blue-600 hover:underline" onClick={handleScrollToTop}>MONITOR NACIONAL GRAPPLING POLICIAL</Link></p>
               </div>
             </div>
+            
+            {/* NEW ITEM: Curso Bastón Policial y Cena Gala 2024 */}
+            <div className="border-b pb-4">
+              <h3 className="text-lg font-medium text-center">CURSO BASTÓN POLICIAL Y CENA GALA 2024</h3>
+              <div className="flex flex-col items-center mt-3 mb-3">
+                <div className="grid grid-cols-1 gap-4">
+                  <img 
+                    src="/lovable-uploads/75b4984a-a52f-4e45-a743-339ec427bd6f.png" 
+                    alt="Cena de Gala Defensa Personal Policial Krav Maga" 
+                    className="rounded-lg max-w-full h-auto mb-3"
+                  />
+                  <img 
+                    src="/lovable-uploads/0908978a-560e-4b67-b07b-220dd9873c34.png" 
+                    alt="Bastones Policiales" 
+                    className="rounded-lg max-w-full h-auto max-h-64"
+                  />
+                </div>
+              </div>
+              <div className="mt-4 space-y-2">
+                <p>Información de estos 2 eventos. La gente que acuda al curso por precio del mismo le incluye la cena de Gala.</p>
+                <p className="mt-4 font-bold text-center">VER MÁS EN:</p>
+                <p className="text-center">
+                  <a 
+                    href="http://bootcampspain.es/wp-content/uploads/CURSO-BASTON-Y-GALA-2024.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 hover:underline font-bold"
+                  >
+                    CURSO BASTÓN Y GALA 2024
+                  </a>
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </Layout>;
 };
+
 export default Index;

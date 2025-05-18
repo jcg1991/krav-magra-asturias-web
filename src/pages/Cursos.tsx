@@ -7,6 +7,7 @@ import CursosEspeciales from '../components/courses/CursosEspeciales';
 import CursoInmueblesUrbano from '../components/courses/CursoInmueblesUrbano';
 import CursoLegion from '../components/courses/CursoLegion';
 import ProximosCursos from '../components/courses/ProximosCursos';
+import CursoBastonGala from '../components/courses/CursoBastonGala';
 
 const CursosPage = () => {
   return (
@@ -20,6 +21,9 @@ const CursosPage = () => {
         <CursosEspeciales />
         <CursoInmueblesUrbano />
         <CursoLegion />
+        
+        {/* New Baston and Gala course */}
+        <CursoBastonGala />
         
         {/* Próximos Cursos Notice */}
         <ProximosCursos />

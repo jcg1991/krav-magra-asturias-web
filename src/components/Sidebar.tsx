@@ -120,6 +120,10 @@ const Sidebar = () => {
         <SidebarNavLink to="/cursos" id="curso-legion" className="text-xs">
           CURSO INTERVENCIÓN POLICIAL X BANDERA MILLAN ASTRAY – LEGIÓN ESPAÑOLA
         </SidebarNavLink>
+        
+        <SidebarNavLink to="/cursos" id="curso-baston-gala" className="text-xs">
+          CURSO BASTÓN POLICIAL Y CENA GALA 2024
+        </SidebarNavLink>
       </div>
     </aside>
   );
