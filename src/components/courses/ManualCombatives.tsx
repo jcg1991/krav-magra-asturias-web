@@ -5,7 +5,7 @@ import CourseCard from './CourseCard';
 const ManualCombatives = () => {
   return (
     <CourseCard 
-      title="REPERCUSIÓN INTERNACIONAL DEL MANUAL AMERICANO "COMBATIVES" PARA EQUIPOS SWAT"
+      title='REPERCUSIÓN INTERNACIONAL DEL MANUAL AMERICANO "COMBATIVES" PARA EQUIPOS SWAT'
       id="manual-combatives"
     >
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
