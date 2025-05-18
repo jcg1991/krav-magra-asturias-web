@@ -1,4 +1,3 @@
-
 import { CalendarEvent } from "../types/calendar";
 
 // Sample events data
@@ -68,5 +67,22 @@ export const calendarEvents: CalendarEvent[] = [
     description: "Segundo día del curso de autoprotección para civiles y defensa del hogar.",
     highlighted: true,
     type: 'autoproteccion'
+  },
+  // Adding the new Curso Inmuebles Urbano - highlighted with type inmuebles_urbano
+  {
+    id: 10,
+    title: "CURSO INTERVENCIÓN EN INMUEBLES Y ZONAS URBANIZADAS - Día 1",
+    date: new Date(2025, 0, 11), // January 11, 2025
+    description: "Primer día del curso de intervención en inmuebles y zonas urbanizadas.",
+    highlighted: true,
+    type: 'inmuebles_urbano'
+  },
+  {
+    id: 11,
+    title: "CURSO INTERVENCIÓN EN INMUEBLES Y ZONAS URBANIZADAS - Día 2",
+    date: new Date(2025, 0, 12), // January 12, 2025
+    description: "Segundo día del curso de intervención en inmuebles y zonas urbanizadas.",
+    highlighted: true,
+    type: 'inmuebles_urbano'
   }
 ];
