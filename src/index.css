@@ -97,7 +97,7 @@
 /* Custom styles */
 .header-image {
   background-image: url('/lovable-uploads/fa33c7f7-c404-4f0f-b619-4ed07f8e2809.png');
-  background-size: contain;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
