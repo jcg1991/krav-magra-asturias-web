@@ -19,11 +19,11 @@ const Index = () => {
         {/* Features Grid */}
         <FeaturesGrid />
         
-        {/* International Recognition Section */}
-        <InternationalRecognitionSection />
-        
         {/* Latest News Section */}
         <LatestNewsSection />
+        
+        {/* International Recognition Section */}
+        <InternationalRecognitionSection />
       </div>
     </Layout>
   );
