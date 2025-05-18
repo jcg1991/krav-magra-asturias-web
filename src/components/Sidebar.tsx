@@ -124,6 +124,10 @@ const Sidebar = () => {
         <SidebarNavLink to="/cursos" id="curso-baston-gala" className="text-xs">
           CURSO BASTÓN POLICIAL Y CENA GALA 2024
         </SidebarNavLink>
+        
+        <SidebarNavLink to="/cursos" id="curso-contraterrorismo" className="text-xs">
+          CURSO CONTRATERRORISMO ISRAELÍ
+        </SidebarNavLink>
       </div>
     </aside>
   );
