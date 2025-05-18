@@ -13,16 +13,16 @@ interface CalendarComponentProps {
 
 const CalendarComponent = ({ date, setDate, events }: CalendarComponentProps) => {
   return (
-    <Card className="h-full">
-      <CardHeader className="pb-2">
+    <Card>
+      <CardHeader>
         <CardTitle>Selecciona una fecha</CardTitle>
       </CardHeader>
-      <CardContent className="pb-2">
+      <CardContent>
         <Calendar
           mode="single"
           selected={date}
           onSelect={setDate}
-          className="rounded-md border shadow w-full"
+          className="rounded-md border shadow pointer-events-auto"
           modifiersClassNames={{
             selected: "bg-primary text-primary-foreground",
           }}
@@ -32,9 +32,6 @@ const CalendarComponent = ({ date, setDate, events }: CalendarComponentProps) =>
               .map(event => new Date(event.date)),
             autoproteccion: events
               .filter(event => event.type === 'autoproteccion')
-              .map(event => new Date(event.date)),
-            inmuebles_urbano: events
-              .filter(event => event.type === 'inmuebles_urbano')
               .map(event => new Date(event.date))
           }}
           modifiersStyles={{
@@ -47,17 +44,10 @@ const CalendarComponent = ({ date, setDate, events }: CalendarComponentProps) =>
               backgroundColor: "#F97316",
               color: "white",
               fontWeight: "bold"
-            },
-            inmuebles_urbano: {
-              backgroundColor: "#3B82F6",
-              color: "white",
-              fontWeight: "bold"
             }
           }}
         />
-        <div className="mt-4">
-          <CalendarLegend />
-        </div>
+        <CalendarLegend />
       </CardContent>
     </Card>
   );

@@ -14,8 +14,12 @@ const CalendarioPage = () => {
         <h1 className="text-3xl font-bold text-primary">Calendario de Cursos y Eventos</h1>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="md:col-span-1 w-full">
-            <CalendarComponent date={date} setDate={setDate} events={calendarEvents} />
+          <div className="md:col-span-1">
+            <CalendarComponent 
+              date={date} 
+              setDate={setDate} 
+              events={calendarEvents} 
+            />
           </div>
           
           <div className="md:col-span-2">
