@@ -32,6 +32,9 @@ const CalendarComponent = ({ date, setDate, events }: CalendarComponentProps) =>
               .map(event => new Date(event.date)),
             autoproteccion: events
               .filter(event => event.type === 'autoproteccion')
+              .map(event => new Date(event.date)),
+            inmuebles_urbano: events
+              .filter(event => event.type === 'inmuebles_urbano')
               .map(event => new Date(event.date))
           }}
           modifiersStyles={{
@@ -42,6 +45,11 @@ const CalendarComponent = ({ date, setDate, events }: CalendarComponentProps) =>
             },
             autoproteccion: {
               backgroundColor: "#F97316",
+              color: "white",
+              fontWeight: "bold"
+            },
+            inmuebles_urbano: {
+              backgroundColor: "#3B82F6",
               color: "white",
               fontWeight: "bold"
             }

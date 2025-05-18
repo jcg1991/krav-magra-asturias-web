@@ -16,6 +16,7 @@ import Calendario from "./pages/Calendario";
 import Cursos from "./pages/Cursos";
 import CursosEspeciales from "./pages/CursosEspeciales";
 import CursoAutoproteccion from "./pages/CursoAutoproteccion";
+import CursoInmueblesUrbano from "./pages/CursoInmueblesUrbano";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -39,6 +40,7 @@ const App = () => (
           <Route path="/cursos" element={<Cursos />} />
           <Route path="/cursos-especiales" element={<CursosEspeciales />} />
           <Route path="/curso-autoproteccion" element={<CursoAutoproteccion />} />
+          <Route path="/curso-inmuebles-urbano" element={<CursoInmueblesUrbano />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
