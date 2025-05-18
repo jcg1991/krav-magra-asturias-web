@@ -17,6 +17,7 @@ import Cursos from "./pages/Cursos";
 import CursosEspeciales from "./pages/CursosEspeciales";
 import CursoAutoproteccion from "./pages/CursoAutoproteccion";
 import CursoInmueblesUrbano from "./pages/CursoInmueblesUrbano";
+import ContentPage from "./pages/ContentPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -41,6 +42,7 @@ const App = () => (
           <Route path="/cursos-especiales" element={<CursosEspeciales />} />
           <Route path="/curso-autoproteccion" element={<CursoAutoproteccion />} />
           <Route path="/curso-inmuebles-urbano" element={<CursoInmueblesUrbano />} />
+          <Route path="/page/:pageNumber" element={<ContentPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -5,6 +5,7 @@ import IntroductionSection from '../components/home/IntroductionSection';
 import FeaturesGrid from '../components/home/FeaturesGrid';
 import LatestNewsSection from '../components/news/LatestNewsSection';
 import InternationalRecognitionSection from '../components/home/InternationalRecognitionSection';
+import PaginationSection from '../components/home/PaginationSection';
 
 const Index = () => {
   return (
@@ -24,6 +25,9 @@ const Index = () => {
         
         {/* International Recognition Section */}
         <InternationalRecognitionSection />
+        
+        {/* Pagination Section */}
+        <PaginationSection />
       </div>
     </Layout>
   );
