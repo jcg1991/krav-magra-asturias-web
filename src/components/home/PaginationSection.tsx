@@ -18,6 +18,15 @@ const PaginationSection = () => {
   const basePath = isCoursesPage ? '/cursos/page/' : '/page/';
   const homePath = isCoursesPage ? '/cursos' : '/';
   
+  // Determine current page from path
+  let currentPage = 1;
+  if (location.pathname.includes('/page/')) {
+    const pageMatch = location.pathname.match(/\/page\/(\d+)/);
+    if (pageMatch && pageMatch[1]) {
+      currentPage = parseInt(pageMatch[1]);
+    }
+  }
+  
   const handlePageChange = (page: number) => {
     if (page === 1) {
       // Navigate to main page (either Index or Cursos)
@@ -35,7 +44,7 @@ const PaginationSection = () => {
           {[...Array(totalPages)].map((_, i) => (
             <PaginationItem key={i + 1}>
               <PaginationLink 
-                isActive={i + 1 === 1}
+                isActive={i + 1 === currentPage}
                 onClick={() => handlePageChange(i + 1)}
                 className="cursor-pointer"
               >
@@ -44,7 +53,10 @@ const PaginationSection = () => {
             </PaginationItem>
           ))}
           <PaginationItem>
-            <PaginationNext onClick={() => handlePageChange(2)} className="cursor-pointer" />
+            <PaginationNext 
+              onClick={() => handlePageChange(currentPage < totalPages ? currentPage + 1 : currentPage)} 
+              className="cursor-pointer" 
+            />
           </PaginationItem>
         </PaginationContent>
       </Pagination>

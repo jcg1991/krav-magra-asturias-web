@@ -2,6 +2,7 @@
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import Layout from '../components/Layout';
+import CourseCard from '../components/courses/CourseCard';
 import {
   Pagination,
   PaginationContent,
@@ -34,19 +35,46 @@ const CoursesContentPage = () => {
           Contenido Adicional de Cursos - Página {pageNumber}
         </h1>
         
-        <div className="bg-white rounded-lg shadow-md p-6">
-          <h2 className="text-2xl font-bold mb-4">Contenido de cursos - Página {pageNumber}</h2>
-          <p className="mb-4">
-            Esta es la página {pageNumber} del contenido adicional de cursos. Aquí puedes añadir más contenido de cursos según necesites.
-          </p>
-          
-          {/* Área para subir y mostrar contenido adicional */}
-          <div className="bg-gray-50 border border-dashed border-gray-300 rounded-lg p-6 mb-6">
-            <p className="text-center text-gray-500">
-              Espacio para contenido adicional de cursos - Página {pageNumber}
+        {currentPage === 2 && (
+          <>
+            <CourseCard title="CURSO DE COMBATE, INTERVENCIÓN TÁCTICAS POLICIALES ESPECIALES LEGIÓN EXTRANJERA FRANCESA">
+              <div className="space-y-4">
+                <div className="aspect-video w-full rounded-lg overflow-hidden">
+                  <video 
+                    controls 
+                    className="w-full h-full object-cover"
+                    src="http://bootcampspain.es/wp-content/uploads/CURSO-ESPECIAL-EN-LA-LEGION-EXTRANJERA-FRANCESA.mp4?_=1"
+                  >
+                    Tu navegador no soporta el elemento de vídeo.
+                  </video>
+                </div>
+                <div className="mt-4">
+                  <p className="text-gray-700">
+                    Curso especial de tácticas policiales avanzadas impartido en colaboración con la Legión Extranjera Francesa. 
+                    Este programa de entrenamiento está diseñado para profesionales de seguridad que buscan mejorar sus 
+                    habilidades en intervenciones tácticas especiales y situaciones de combate.
+                  </p>
+                </div>
+              </div>
+            </CourseCard>
+          </>
+        )}
+        
+        {currentPage !== 2 && (
+          <div className="bg-white rounded-lg shadow-md p-6">
+            <h2 className="text-2xl font-bold mb-4">Contenido de cursos - Página {pageNumber}</h2>
+            <p className="mb-4">
+              Esta es la página {pageNumber} del contenido adicional de cursos. Aquí puedes añadir más contenido de cursos según necesites.
             </p>
+            
+            {/* Área para subir y mostrar contenido adicional */}
+            <div className="bg-gray-50 border border-dashed border-gray-300 rounded-lg p-6 mb-6">
+              <p className="text-center text-gray-500">
+                Espacio para contenido adicional de cursos - Página {pageNumber}
+              </p>
+            </div>
           </div>
-        </div>
+        )}
         
         {/* Paginación */}
         <div className="w-full mt-8 bg-gray-100 rounded-lg shadow-sm p-4">
