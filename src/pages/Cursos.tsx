@@ -11,6 +11,7 @@ import CursoBastonGala from '../components/courses/CursoBastonGala';
 import CursoContraterrorismo from '../components/courses/CursoContraterrorismo';
 import CursoEntrenadorKravMaga from '../components/courses/CursoEntrenadorKravMaga';
 import ManualCombatives from '../components/courses/ManualCombatives';
+import PaginationSection from '../components/home/PaginationSection';
 
 const CursosPage = () => {
   return (
@@ -39,6 +40,9 @@ const CursosPage = () => {
         
         {/* Próximos Cursos Notice */}
         <ProximosCursos />
+        
+        {/* Pagination Section */}
+        <PaginationSection />
       </div>
     </Layout>
   );

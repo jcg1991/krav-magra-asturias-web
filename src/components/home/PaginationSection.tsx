@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import {
   Pagination,
   PaginationContent,
@@ -11,15 +11,21 @@ import {
 
 const PaginationSection = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const totalPages = 10;
+  
+  const isCoursesPage = location.pathname.includes('/cursos');
+  const basePath = isCoursesPage ? '/cursos/page/' : '/page/';
+  const homePath = isCoursesPage ? '/cursos' : '/';
   
   const handlePageChange = (page: number) => {
     if (page === 1) {
-      // Página actual
+      // Navigate to main page (either Index or Cursos)
+      navigate(homePath);
       return;
     }
-    // Navegar a las páginas adicionales
-    navigate(`/page/${page}`);
+    // Navigate to the additional pages
+    navigate(`${basePath}${page}`);
   };
 
   return (
