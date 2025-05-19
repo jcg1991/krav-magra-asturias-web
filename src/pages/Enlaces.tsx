@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Layout from '../components/Layout';
 const Enlaces = () => {
@@ -20,7 +21,7 @@ const Enlaces = () => {
           <div>
             <h3 className="text-xl font-semibold mb-2">Redes Sociales</h3>
             <ul className="list-disc pl-6 space-y-2">
-              <li><a href="https://www.facebook.com/profile.php?id=100002385054891&ref=ts" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Facebook Personal</a></li>
+              <li><a href="https://www.facebook.com/share/16cRj9Jgh4/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Facebook Personal</a></li>
               <li><a href="https://www.facebook.com/kravmaga.asturias/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Facebook Krav Maga Asturias</a></li>
             </ul>
           </div>

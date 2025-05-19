@@ -92,6 +92,9 @@ const Sidebar = () => {
                 <MenuLink href="https://defensapolicial.es/wp-content/uploads/3a-KATA-DPP..pdf">
                   Descargar 3era KATA
                 </MenuLink>
+                <MenuLink href="https://defensapolicial.es/wp-content/uploads/4a-KATA-DPP..pdf">
+                  Descargar 4ª KATA
+                </MenuLink>
               </div>
             </SubmenuItem>
           </div>
