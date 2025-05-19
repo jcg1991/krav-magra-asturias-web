@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import SearchBar from './sidebar/SearchBar';
 import SubmenuItem from './sidebar/SubmenuItem';
@@ -54,7 +55,7 @@ const Sidebar = () => {
               onToggle={() => toggleSubmenu("programa-tecnico")}
             >
               <div className="pl-4">
-                <div className="py-1 px-4 text-sm font-medium text-gray-700">HASTA C.N. 3º DAN</div>
+                <div className="py-1 px-4 text-sm font-medium text-gray-700">HASTA C.N. 5º DAN</div>
                 <MenuLink href="http://bootcampspain.es/wp-content/uploads/DPPCN1DANDPPCOMPLETO.pdf">
                   Descargar 1er DAN
                 </MenuLink>
@@ -63,6 +64,12 @@ const Sidebar = () => {
                 </MenuLink>
                 <MenuLink href="http://bootcampspain.es/wp-content/uploads/PROGRAMA3DANDPP.pdf">
                   Descargar 3er DAN
+                </MenuLink>
+                <MenuLink href="https://defensapolicial.es/wp-content/uploads/PROGRAMA-4o-DAN-BPE.pdf">
+                  Descargar 4º DAN
+                </MenuLink>
+                <MenuLink href="https://defensapolicial.es/wp-content/uploads/PROGRAMA-5o-DAN-DPP.pdf">
+                  Descargar 5º DAN
                 </MenuLink>
               </div>
             </SubmenuItem>
