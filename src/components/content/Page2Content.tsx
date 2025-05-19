@@ -9,14 +9,14 @@ import StageNacionalKravMagaCourse from '../courses/StageNacionalKravMagaCourse'
 
 const Page2Content = () => {
   return (
-    <>
+    <div className="space-y-8">
       <LegionExtranjeraFrancesaCourse />
       <CampusMarcialCourse />
       <IntervencionTacticasCourse />
       <ClasesKravMagaCourse />
       <KravMagaBootCampCourse />
       <StageNacionalKravMagaCourse />
-    </>
+    </div>
   );
 };
 
