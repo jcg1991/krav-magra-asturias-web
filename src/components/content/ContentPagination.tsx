@@ -20,13 +20,19 @@ const ContentPagination: React.FC<ContentPaginationProps> = ({
   totalPages,
   handlePageChange
 }) => {
+  const handleClick = (page: number) => {
+    // Scroll to top before changing the page
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    handlePageChange(page);
+  };
+
   return (
     <div className="w-full mt-8 bg-gray-100 rounded-lg shadow-sm p-4">
       <Pagination>
         <PaginationContent>
           <PaginationItem>
             <PaginationPrevious 
-              onClick={() => handlePageChange(currentPage > 1 ? currentPage - 1 : 1)} 
+              onClick={() => handleClick(currentPage > 1 ? currentPage - 1 : 1)} 
               className={`cursor-pointer ${currentPage === 1 ? 'opacity-50' : ''}`}
             />
           </PaginationItem>
@@ -35,7 +41,7 @@ const ContentPagination: React.FC<ContentPaginationProps> = ({
             <PaginationItem key={i + 1}>
               <PaginationLink 
                 isActive={i + 1 === currentPage}
-                onClick={() => handlePageChange(i + 1)}
+                onClick={() => handleClick(i + 1)}
                 className="cursor-pointer"
               >
                 {i + 1}
@@ -45,7 +51,7 @@ const ContentPagination: React.FC<ContentPaginationProps> = ({
           
           <PaginationItem>
             <PaginationNext 
-              onClick={() => handlePageChange(currentPage < totalPages ? currentPage + 1 : currentPage)} 
+              onClick={() => handleClick(currentPage < totalPages ? currentPage + 1 : currentPage)} 
               className={`cursor-pointer ${currentPage === totalPages ? 'opacity-50' : ''}`}
             />
           </PaginationItem>

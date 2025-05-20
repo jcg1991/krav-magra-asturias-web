@@ -15,6 +15,9 @@ const CoursesContentPage = () => {
   const handlePageChange = (page: number) => {
     if (page === currentPage) return;
     
+    // Scroll to top before navigation
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    
     if (page === 1) {
       navigate('/cursos');
     } else {

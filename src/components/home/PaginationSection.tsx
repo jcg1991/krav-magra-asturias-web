@@ -28,6 +28,9 @@ const PaginationSection = () => {
   }
   
   const handlePageChange = (page: number) => {
+    // Scroll to top before navigation
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    
     if (page === 1) {
       // Navigate to main page (either Index or Cursos)
       navigate(homePath);
