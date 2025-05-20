@@ -3,6 +3,7 @@ import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import Layout from '../components/Layout';
 import Page2Content from '../components/content/Page2Content';
+import Page3Content from '../components/content/Page3Content';
 import GenericContentPlaceholder from '../components/content/GenericContentPlaceholder';
 import ContentPagination from '../components/content/ContentPagination';
 
@@ -34,6 +35,8 @@ const CoursesContentPage = () => {
         
         {currentPage === 2 ? (
           <Page2Content />
+        ) : currentPage === 3 ? (
+          <Page3Content />
         ) : (
           <GenericContentPlaceholder pageNumber={pageNumber || '1'} />
         )}

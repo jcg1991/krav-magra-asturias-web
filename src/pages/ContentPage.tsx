@@ -5,6 +5,7 @@ import Layout from '../components/Layout';
 import GenericContentPlaceholder from '../components/content/GenericContentPlaceholder';
 import ContentPagination from '../components/content/ContentPagination';
 import Page2Content from '../components/content/Page2Content';
+import Page3Content from '../components/content/Page3Content';
 
 const ContentPage = () => {
   const { pageNumber } = useParams();
@@ -34,6 +35,8 @@ const ContentPage = () => {
         
         {currentPage === 2 ? (
           <Page2Content />
+        ) : currentPage === 3 ? (
+          <Page3Content />
         ) : (
           <GenericContentPlaceholder pageNumber={pageNumber || '1'} />
         )}
