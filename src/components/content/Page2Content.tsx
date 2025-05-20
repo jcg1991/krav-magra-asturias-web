@@ -8,6 +8,8 @@ import KravMagaBootCampCourse from '../courses/KravMagaBootCampCourse';
 import StageNacionalKravMagaCourse from '../courses/StageNacionalKravMagaCourse';
 import SemanaTacticaCourse from '../courses/SemanaTacticaCourse';
 import CampusMarcial2023Course from '../courses/CampusMarcial2023Course';
+import CursoBastonPolicialCourse from '../courses/CursoBastonPolicialCourse';
+import CursoTiradorActivoCourse from '../courses/CursoTiradorActivoCourse';
 
 const Page2Content = () => {
   return (
@@ -20,6 +22,8 @@ const Page2Content = () => {
       <StageNacionalKravMagaCourse />
       <SemanaTacticaCourse />
       <CampusMarcial2023Course />
+      <CursoBastonPolicialCourse />
+      <CursoTiradorActivoCourse />
     </div>
   );
 };
