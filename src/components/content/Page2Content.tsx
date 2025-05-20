@@ -6,7 +6,7 @@ import IntervencionTacticasCourse from '../courses/IntervencionTacticasCourse';
 import ClasesKravMagaCourse from '../courses/ClasesKravMagaCourse';
 import KravMagaBootCampCourse from '../courses/KravMagaBootCampCourse';
 import StageNacionalKravMagaCourse from '../courses/StageNacionalKravMagaCourse';
-import SemanaTacticaCourse from '../courses/SemanaMarciaCourse';
+import SemanaTacticaCourse from '../courses/SemanaTacticaCourse';
 import CampusMarcial2023Course from '../courses/CampusMarcial2023Course';
 
 const Page2Content = () => {
