@@ -11,7 +11,7 @@ const CursoBastonPolicialCourse = () => {
     >
       <div className="space-y-4">
         <img 
-          src="/lovable-uploads/0851ff09-9470-47f2-a7a6-5864b506a54c.png" 
+          src="/lovable-uploads/4ed7c852-0216-4f41-a82f-6235addfbe7f.png" 
           alt="Curso Bastón Policial Extensible" 
           className="w-full h-auto rounded-md shadow-sm" 
         />

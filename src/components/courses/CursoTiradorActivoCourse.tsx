@@ -11,7 +11,7 @@ const CursoTiradorActivoCourse = () => {
     >
       <div className="space-y-4">
         <img 
-          src="/lovable-uploads/0908978a-560e-4b67-b07b-220dd9873c34.png" 
+          src="/lovable-uploads/d7a54087-297a-429c-8976-4a7ed7e42eb3.png" 
           alt="Curso Tirador Activo" 
           className="w-full h-auto rounded-md shadow-sm" 
         />
