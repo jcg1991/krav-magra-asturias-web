@@ -10,11 +10,11 @@ const ExcelentesResultadosCampeonatoEspanaCourse = () => {
       id="resultados-campeonato-espana"
     >
       <div className="space-y-4">
-        <div className="flex justify-center mb-4">
+        <div className="flex justify-center mb-6">
           <img 
             src="/lovable-uploads/d5e8f85e-9516-45df-a32c-6c7b4cd9d24a.png" 
             alt="Equipo de Asturias en el Campeonato de España" 
-            className="max-w-full h-auto rounded-lg shadow-md"
+            className="w-full max-w-4xl h-auto rounded-lg shadow-md"
           />
         </div>
         

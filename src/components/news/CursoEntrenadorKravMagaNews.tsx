@@ -13,11 +13,11 @@ const CursoEntrenadorKravMagaNews = () => {
   return (
     <div className="border-b pb-4">
       <h3 className="text-lg font-medium text-center">CONVOCATORIA CURSO DE ENTRENADOR NACIONAL DE KRAV MAGA</h3>
-      <div className="flex justify-center my-4">
+      <div className="flex justify-center my-6">
         <img 
           src="/lovable-uploads/e0a125a9-6c92-430c-84ba-c9e69773d59a.png" 
           alt="Curso Entrenador Nacional de Krav Maga" 
-          className="rounded-lg max-w-full h-auto max-h-80"
+          className="rounded-lg max-w-full h-auto max-h-96"
         />
       </div>
       <div className="mt-4 space-y-2 text-center">
