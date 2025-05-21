@@ -13,13 +13,13 @@ const CursoAperturasNews = () => {
   return (
     <div className="border-b pb-4">
       <h3 className="text-lg font-medium text-center">CURSO APERTURA INTERVENCIONES EN INMUEBLES</h3>
-      <div className="flex flex-col items-center mt-3 mb-3">
+      <div className="flex flex-col items-center mt-4 mb-5">
         <img 
           src="/lovable-uploads/ef926983-66af-40b5-b7d0-8b97b273ff3a.png" 
           alt="Operativo Unidad Especial en Aperturas" 
-          className="rounded-lg max-w-full h-auto mb-2" 
+          className="rounded-lg w-full max-w-4xl h-auto mb-4 shadow-md" 
         />
-        <p className="text-center font-medium">IMPARTIDO POR OPERATIVO UNIDAD ESPECIAL EN APERTURAS</p>
+        <p className="text-center font-medium mt-1">IMPARTIDO POR OPERATIVO UNIDAD ESPECIAL EN APERTURAS</p>
       </div>
       <div className="mt-4 space-y-2">
         <p><strong>FECHA:</strong> 24, 25 Y 26 DE JUNIO DE 2025</p>
