@@ -15,13 +15,14 @@ const SubmenuItem: React.FC<SubmenuItemProps> = ({
   children 
 }) => {
   return (
-    <div>
+    <div className="w-full">
       <button
         onClick={onToggle}
         className="w-full text-left py-2 px-4 font-medium text-sm flex justify-between items-center hover:bg-gray-100"
+        aria-expanded={isOpen}
       >
-        <span>{title}</span>
-        <span className="transition-transform duration-200">
+        <span className="truncate pr-2">{title}</span>
+        <span className="transition-transform duration-200 flex-shrink-0">
           {isOpen ? "−" : "+"}
         </span>
       </button>

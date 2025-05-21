@@ -1,12 +1,15 @@
-
 import React, { useState } from 'react';
 import SearchBar from './sidebar/SearchBar';
 import SubmenuItem from './sidebar/SubmenuItem';
 import MenuLink from './sidebar/MenuLink';
 import SidebarNavLink from './sidebar/SidebarNavLink';
 
-const Sidebar = () => {
-  // Track multiple submenus with an object - initialize "programa-nacional" as false (closed)
+interface SidebarProps {
+  onCloseMobile?: () => void;
+}
+
+const Sidebar: React.FC<SidebarProps> = ({ onCloseMobile }) => {
+  // Track multiple submenus with an object - initialize all as false (closed)
   const [openSubmenus, setOpenSubmenus] = useState<{
     [key: string]: boolean;
   }>({
@@ -23,14 +26,27 @@ const Sidebar = () => {
   };
   
   return (
-    <aside className="w-64 bg-gray-50 border-r min-h-screen">
+    <aside className="w-full md:w-64 bg-gray-50 border-r min-h-full md:min-h-screen max-h-screen overflow-y-auto">
+      <div className="flex justify-between items-center md:hidden px-4 py-2 border-b">
+        <span className="font-medium">Menú</span>
+        <button 
+          onClick={onCloseMobile}
+          className="p-2 rounded-md hover:bg-gray-200"
+          aria-label="Close sidebar"
+        >
+          <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      
       <div className="px-4 py-5">
         {/* Logo encima del buscador */}
         <div className="flex justify-center mb-4">
           <img 
             src="/lovable-uploads/1f06ec5f-c163-4470-baca-abdb5a7bf145.png" 
             alt="Logo Internacional Police Association" 
-            className="w-40 h-auto"
+            className="w-32 md:w-40 h-auto"
           />
         </div>
         
@@ -109,36 +125,36 @@ const Sidebar = () => {
           />
         </div>
         
-        {/* Other Courses */}
-        <SidebarNavLink to="/cursos" scrollToTop={true}>
+        {/* Other Courses - using onClick for mobile to close sidebar when navigating */}
+        <SidebarNavLink to="/cursos" scrollToTop={true} onClick={onCloseMobile}>
           CURSO APERTURA INTERVENCIONES EN INMUEBLES
         </SidebarNavLink>
         
-        <SidebarNavLink to="/curso-inmuebles-urbano" id="curso-inmuebles-urbano" scrollToTop={true}>
+        <SidebarNavLink to="/curso-inmuebles-urbano" id="curso-inmuebles-urbano" scrollToTop={true} onClick={onCloseMobile}>
           CURSO INTERVENCIÓN EN INMUEBLES Y ZONAS URBANIZADAS
         </SidebarNavLink>
         
-        <SidebarNavLink to="/cursos" id="curso-autoproteccion">
+        <SidebarNavLink to="/cursos" id="curso-autoproteccion" onClick={onCloseMobile}>
           CURSO AUTOPROTECCIÓN CIVILES Y DEFENSA DEL HOGAR
         </SidebarNavLink>
         
-        <SidebarNavLink to="/cursos-especiales">
+        <SidebarNavLink to="/cursos-especiales" onClick={onCloseMobile}>
           CURSOS ESPECIALES 2025
         </SidebarNavLink>
         
-        <SidebarNavLink to="/cursos" id="curso-legion" className="text-xs">
+        <SidebarNavLink to="/cursos" id="curso-legion" className="text-xs" onClick={onCloseMobile}>
           CURSO INTERVENCIÓN POLICIAL X BANDERA MILLAN ASTRAY – LEGIÓN ESPAÑOLA
         </SidebarNavLink>
         
-        <SidebarNavLink to="/cursos" id="curso-baston-gala" className="text-xs">
+        <SidebarNavLink to="/cursos" id="curso-baston-gala" className="text-xs" onClick={onCloseMobile}>
           CURSO BASTÓN POLICIAL Y CENA GALA 2024
         </SidebarNavLink>
         
-        <SidebarNavLink to="/cursos" id="curso-contraterrorismo" className="text-xs">
+        <SidebarNavLink to="/cursos" id="curso-contraterrorismo" className="text-xs" onClick={onCloseMobile}>
           CURSO CONTRATERRORISMO ISRAELÍ
         </SidebarNavLink>
         
-        <SidebarNavLink to="/cursos" id="curso-entrenador-kravmaga" className="text-xs">
+        <SidebarNavLink to="/cursos" id="curso-entrenador-kravmaga" className="text-xs" onClick={onCloseMobile}>
           CURSO ENTRENADOR NACIONAL KRAV MAGA
         </SidebarNavLink>
       </div>

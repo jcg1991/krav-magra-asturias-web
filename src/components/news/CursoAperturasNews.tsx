@@ -19,9 +19,9 @@ const CursoAperturasNews = () => {
           alt="Operativo Unidad Especial en Aperturas" 
           className="rounded-lg w-full max-w-4xl h-auto mb-4 shadow-md" 
         />
-        <p className="text-center font-medium mt-1">IMPARTIDO POR OPERATIVO UNIDAD ESPECIAL EN APERTURAS</p>
+        <p className="text-center font-medium mt-1 text-sm sm:text-base">IMPARTIDO POR OPERATIVO UNIDAD ESPECIAL EN APERTURAS</p>
       </div>
-      <div className="mt-4 space-y-2">
+      <div className="mt-4 space-y-2 text-sm sm:text-base px-2">
         <p><strong>FECHA:</strong> 24, 25 Y 26 DE JUNIO DE 2025</p>
         <p><strong>DIPLOMA / CERTIFICADO:</strong> Oficial y Baremable</p>
         <p><strong>PLAZAS:</strong> 15</p>

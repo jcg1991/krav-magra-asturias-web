@@ -1,58 +1,51 @@
 
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 interface SidebarNavLinkProps {
   to: string;
-  className?: string;
   children: React.ReactNode;
   id?: string;
+  className?: string;
   scrollToTop?: boolean;
+  onClick?: () => void;
 }
 
-const SidebarNavLink: React.FC<SidebarNavLinkProps> = ({ to, className, children, id, scrollToTop = false }) => {
+const SidebarNavLink: React.FC<SidebarNavLinkProps> = ({
+  to,
+  children,
+  id,
+  className = '',
+  scrollToTop = false,
+  onClick
+}) => {
   const location = useLocation();
-  
-  // Generate the final URL with hash if id is provided
-  const targetUrl = id ? `${to}#${id}` : to;
+  const isActive = location.pathname === to;
   
   const handleClick = () => {
-    // If we're already on the target page and there's an id, scroll to it
-    if (location.pathname === to && id) {
-      setTimeout(() => {
-        const element = document.getElementById(id);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      }, 100);
-    } else if (scrollToTop) {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (scrollToTop) {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+    
+    if (onClick) {
+      onClick();
     }
   };
 
-  // If we navigate to a URL with a hash, scroll to the element with that id
-  useEffect(() => {
-    if (location.hash && location.pathname === to) {
-      const id = location.hash.replace('#', '');
-      const element = document.getElementById(id);
-      if (element) {
-        setTimeout(() => {
-          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }, 100);
-      }
-    }
-  }, [location, to]);
-  
   return (
-    <div className="px-4 py-1">
-      <Link 
-        to={targetUrl} 
-        className={`sidebar-menu-item ${className || ''}`}
-        onClick={handleClick}
-      >
-        {children}
-      </Link>
-    </div>
+    <Link
+      to={to}
+      id={id}
+      onClick={handleClick}
+      className={`block py-2 px-4 text-sm font-medium hover:bg-gray-100 ${
+        isActive ? 'bg-gray-100 text-primary' : 'text-gray-700'
+      } ${className}`}
+    >
+      {children}
+    </Link>
   );
 };
 
