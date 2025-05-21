@@ -3,6 +3,9 @@ import React from 'react';
 import CursoKravMagaPolicialPistolaOfensivaCourse from '../courses/CursoKravMagaPolicialPistolaOfensivaCourse';
 import IvanRodriguezCruzPlataFederacionExtremenaCourse from '../courses/IvanRodriguezCruzPlataFederacionExtremenaCourse';
 import ConvocatoriaCursoEntrenadorKravMagaCourse from '../courses/ConvocatoriaCursoEntrenadorKravMagaCourse';
+import ExcelentesResultadosCampeonatoEspanaCourse from '../courses/ExcelentesResultadosCampeonatoEspanaCourse';
+import ArticuloCursoControlMasasLegionCourse from '../courses/ArticuloCursoControlMasasLegionCourse';
+import IvanRodriguezGalardonadoCruzCourse from '../courses/IvanRodriguezGalardonadoCruzCourse';
 
 const Page4Content = () => {
   return (
@@ -10,6 +13,9 @@ const Page4Content = () => {
       <CursoKravMagaPolicialPistolaOfensivaCourse />
       <IvanRodriguezCruzPlataFederacionExtremenaCourse />
       <ConvocatoriaCursoEntrenadorKravMagaCourse />
+      <ExcelentesResultadosCampeonatoEspanaCourse />
+      <ArticuloCursoControlMasasLegionCourse />
+      <IvanRodriguezGalardonadoCruzCourse />
     </div>
   );
 };
