@@ -1,3 +1,4 @@
+
 import React from 'react';
 import CourseCard from './CourseCard';
 
@@ -8,12 +9,12 @@ const ConvocatoriaCursoEntrenadorKravMagaCourse = () => {
       id="convocatoria-curso-entrenador"
     >
       <div className="space-y-4">
-        {/* Added image below title */}
-        <div className="flex justify-center">
+        {/* Increased image size and improved container */}
+        <div className="flex justify-center my-6">
           <img 
             src="/lovable-uploads/a97d0635-eeff-4f28-83e4-92906c4e6acd.png" 
             alt="Logo Krav Maga Israel Self Defense" 
-            className="h-48 w-auto mb-4"
+            className="h-72 w-auto object-contain"
           />
         </div>
         

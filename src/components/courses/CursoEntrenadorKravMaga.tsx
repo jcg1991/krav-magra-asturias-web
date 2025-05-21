@@ -9,12 +9,12 @@ const CursoEntrenadorKravMaga = () => {
       id="curso-entrenador-kravmaga"
     >
       <div className="space-y-6">
-        {/* Course Image */}
-        <div className="flex justify-center mb-6">
+        {/* Increased image size */}
+        <div className="flex justify-center my-6">
           <img 
             src="/lovable-uploads/e0a125a9-6c92-430c-84ba-c9e69773d59a.png" 
             alt="Curso Entrenador Nacional de Krav Maga" 
-            className="rounded-lg shadow-md max-w-full h-auto"
+            className="rounded-lg shadow-md max-w-full h-auto max-h-96"
           />
         </div>
         
