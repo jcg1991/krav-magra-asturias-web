@@ -10,11 +10,11 @@ const ArticuloCursoControlMasasLegionCourse = () => {
       id="articulo-curso-legion"
     >
       <div className="space-y-4">
-        <div className="flex justify-center mb-4">
+        <div className="flex justify-center mb-6">
           <img 
             src="/lovable-uploads/c447d1e0-efd8-4e62-a694-6e2b85b05239.png" 
             alt="Curso de Control de Masas en La Legión" 
-            className="max-w-full h-auto rounded-lg shadow-md"
+            className="w-full max-w-4xl h-auto rounded-lg shadow-md"
           />
         </div>
         
