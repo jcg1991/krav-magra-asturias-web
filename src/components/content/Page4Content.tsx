@@ -6,6 +6,9 @@ import ConvocatoriaCursoEntrenadorKravMagaCourse from '../courses/ConvocatoriaCu
 import ExcelentesResultadosCampeonatoEspanaCourse from '../courses/ExcelentesResultadosCampeonatoEspanaCourse';
 import ArticuloCursoControlMasasLegionCourse from '../courses/ArticuloCursoControlMasasLegionCourse';
 import IvanRodriguezGalardonadoCruzCourse from '../courses/IvanRodriguezGalardonadoCruzCourse';
+import GalaAnualDepartamentoCourse from '../courses/GalaAnualDepartamentoCourse';
+import CursoKubotanGalaPolicialCourse from '../courses/CursoKubotanGalaPolicialCourse';
+import CampusArtesMarcialesCourse from '../courses/CampusArtesMarcialesCourse';
 
 const Page4Content = () => {
   return (
@@ -16,6 +19,9 @@ const Page4Content = () => {
       <ExcelentesResultadosCampeonatoEspanaCourse />
       <ArticuloCursoControlMasasLegionCourse />
       <IvanRodriguezGalardonadoCruzCourse />
+      <GalaAnualDepartamentoCourse />
+      <CursoKubotanGalaPolicialCourse />
+      <CampusArtesMarcialesCourse />
     </div>
   );
 };
