@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Header from './Header';
 import Sidebar from './Sidebar';
 import Footer from './Footer';
+import ScrollToTop from './ScrollToTop';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -42,6 +43,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         </main>
       </div>
       <Footer />
+      <ScrollToTop />
     </div>
   );
 };

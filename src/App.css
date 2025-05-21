@@ -80,4 +80,11 @@
     width: 100% !important;
     max-width: 320px;
   }
+
+  /* Ensure scroll to top button doesn't get too small on mobile */
+  .scroll-to-top-button {
+    min-width: 40px;
+    min-height: 40px;
+  }
 }
+
