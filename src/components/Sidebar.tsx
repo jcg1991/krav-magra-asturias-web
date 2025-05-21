@@ -6,11 +6,11 @@ import MenuLink from './sidebar/MenuLink';
 import SidebarNavLink from './sidebar/SidebarNavLink';
 
 const Sidebar = () => {
-  // Track multiple submenus with an object
+  // Track multiple submenus with an object - initialize "programa-nacional" as false (closed)
   const [openSubmenus, setOpenSubmenus] = useState<{
     [key: string]: boolean;
   }>({
-    "programa-nacional": true,
+    "programa-nacional": false,
     "programa-tecnico": false,
     "katas": false
   });
