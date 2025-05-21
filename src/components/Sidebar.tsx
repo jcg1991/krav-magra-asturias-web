@@ -1,8 +1,10 @@
+
 import React, { useState } from 'react';
 import SearchBar from './sidebar/SearchBar';
 import SubmenuItem from './sidebar/SubmenuItem';
 import MenuLink from './sidebar/MenuLink';
 import SidebarNavLink from './sidebar/SidebarNavLink';
+import { X } from "lucide-react";
 
 interface SidebarProps {
   onCloseMobile?: () => void;
@@ -26,17 +28,16 @@ const Sidebar: React.FC<SidebarProps> = ({ onCloseMobile }) => {
   };
   
   return (
-    <aside className="w-full md:w-64 bg-gray-50 border-r min-h-full md:min-h-screen max-h-screen overflow-y-auto">
-      <div className="flex justify-between items-center md:hidden px-4 py-2 border-b">
+    <aside className="w-full md:w-64 bg-gray-50 border-r min-h-full md:min-h-screen max-h-screen overflow-y-auto flex flex-col">
+      {/* Mobile header with close button */}
+      <div className="flex justify-between items-center md:hidden px-4 py-3 border-b bg-primary text-white sticky top-0 z-10">
         <span className="font-medium">Menú</span>
         <button 
           onClick={onCloseMobile}
-          className="p-2 rounded-md hover:bg-gray-200"
+          className="p-2 rounded-md hover:bg-primary-foreground/10"
           aria-label="Close sidebar"
         >
-          <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-          </svg>
+          <X className="h-5 w-5" />
         </button>
       </div>
       
@@ -54,7 +55,7 @@ const Sidebar: React.FC<SidebarProps> = ({ onCloseMobile }) => {
         <SearchBar />
       </div>
       
-      <div className="mt-2">
+      <div className="mt-2 flex-1 overflow-y-auto">
         <div className="px-4 py-2 text-sm font-semibold text-gray-600">CURSOS</div>
         
         {/* PROGRAMA NACIONAL D. P. POLICIAL */}

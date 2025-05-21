@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { Menu } from "lucide-react";
 
 interface HeaderProps {
   toggleSidebar: () => void;
@@ -14,20 +15,18 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar }) => {
   };
 
   return (
-    <header className="relative">
+    <header className="relative z-20">
       <div className="header-image h-32 md:h-64 w-full bg-contain bg-no-repeat bg-center" style={{ backgroundImage: "url('/lovable-uploads/14759f98-0730-4032-9946-94251f4897bf.png')" }}></div>
-      <nav className="bg-primary shadow-md sticky top-0 z-50">
+      <nav className="bg-primary shadow-md sticky top-0 z-20">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
             <div className="md:hidden">
               <button 
                 onClick={toggleSidebar} 
-                className="text-white hover:text-gray-300 focus:outline-none focus:text-gray-300"
+                className="text-white hover:text-gray-300 focus:outline-none focus:text-gray-300 p-2"
                 aria-label="Open sidebar menu"
               >
-                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
+                <Menu className="h-6 w-6" />
               </button>
             </div>
             
@@ -69,7 +68,7 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar }) => {
             <div className="md:hidden">
               <button 
                 onClick={toggleMobileMenu}
-                className="text-white hover:text-gray-300 focus:outline-none focus:text-gray-300"
+                className="text-white hover:text-gray-300 focus:outline-none focus:text-gray-300 p-2"
                 aria-label="Open navigation menu"
               >
                 <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">

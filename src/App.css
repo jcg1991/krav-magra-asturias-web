@@ -70,4 +70,14 @@
   img {
     max-width: 100%;
   }
+  
+  /* Fix sidebar on mobile */
+  aside.w-full {
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    max-width: 320px;
+  }
 }

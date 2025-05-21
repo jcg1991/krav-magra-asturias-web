@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { ChevronDown, ChevronUp } from "lucide-react";
 
 interface SubmenuItemProps {
   title: string;
@@ -18,12 +19,12 @@ const SubmenuItem: React.FC<SubmenuItemProps> = ({
     <div className="w-full">
       <button
         onClick={onToggle}
-        className="w-full text-left py-2 px-4 font-medium text-sm flex justify-between items-center hover:bg-gray-100"
+        className="w-full text-left py-2 px-4 font-medium text-sm flex justify-between items-center hover:bg-gray-100 rounded transition-colors"
         aria-expanded={isOpen}
       >
         <span className="truncate pr-2">{title}</span>
         <span className="transition-transform duration-200 flex-shrink-0">
-          {isOpen ? "−" : "+"}
+          {isOpen ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
         </span>
       </button>
       
