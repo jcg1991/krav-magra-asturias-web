@@ -1,7 +1,6 @@
 
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu } from "lucide-react";
 
 interface HeaderProps {
   toggleSidebar: () => void;
@@ -23,10 +22,10 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar }) => {
             <div className="md:hidden">
               <button 
                 onClick={toggleSidebar} 
-                className="text-white hover:text-gray-300 focus:outline-none focus:text-gray-300 p-2"
+                className="text-white hover:text-gray-300 focus:outline-none focus:text-gray-300 px-3 py-1 bg-primary-foreground/10 rounded"
                 aria-label="Open sidebar menu"
               >
-                <Menu className="h-6 w-6" />
+                INFO
               </button>
             </div>
             
@@ -68,12 +67,10 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar }) => {
             <div className="md:hidden">
               <button 
                 onClick={toggleMobileMenu}
-                className="text-white hover:text-gray-300 focus:outline-none focus:text-gray-300 p-2"
+                className="text-white hover:text-gray-300 focus:outline-none focus:text-gray-300 px-3 py-1 bg-primary-foreground/10 rounded"
                 aria-label="Open navigation menu"
               >
-                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={mobileMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
-                </svg>
+                MENU
               </button>
             </div>
           </div>
