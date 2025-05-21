@@ -10,16 +10,20 @@ const IvanRodriguezCruzPlataFederacionExtremenaCourse = () => {
     >
       <div className="space-y-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-          <img 
-            src="/lovable-uploads/701b8cab-0ef8-47a0-bd06-fc4ab572ffa9.png" 
-            alt="Iván Rodríguez recibiendo medalla" 
-            className="w-full h-auto rounded-md shadow-sm" 
-          />
-          <img 
-            src="/lovable-uploads/23c1b68a-f70d-45e9-a84a-e17f25ef633f.png" 
-            alt="Iván Rodríguez en la gala" 
-            className="w-full h-auto rounded-md shadow-sm" 
-          />
+          <div className="h-full flex items-stretch">
+            <img 
+              src="/lovable-uploads/701b8cab-0ef8-47a0-bd06-fc4ab572ffa9.png" 
+              alt="Iván Rodríguez recibiendo medalla" 
+              className="w-full h-full object-cover rounded-md shadow-sm" 
+            />
+          </div>
+          <div className="h-full flex items-stretch">
+            <img 
+              src="/lovable-uploads/23c1b68a-f70d-45e9-a84a-e17f25ef633f.png" 
+              alt="Iván Rodríguez en la gala" 
+              className="w-full h-full object-cover rounded-md shadow-sm" 
+            />
+          </div>
         </div>
         
         <p>
