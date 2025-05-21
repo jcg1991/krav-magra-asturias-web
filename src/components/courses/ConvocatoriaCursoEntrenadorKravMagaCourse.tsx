@@ -1,4 +1,3 @@
-
 import React from 'react';
 import CourseCard from './CourseCard';
 
@@ -9,6 +8,15 @@ const ConvocatoriaCursoEntrenadorKravMagaCourse = () => {
       id="convocatoria-curso-entrenador"
     >
       <div className="space-y-4">
+        {/* Added image below title */}
+        <div className="flex justify-center">
+          <img 
+            src="/lovable-uploads/a97d0635-eeff-4f28-83e4-92906c4e6acd.png" 
+            alt="Logo Krav Maga Israel Self Defense" 
+            className="h-48 w-auto mb-4"
+          />
+        </div>
+        
         <h3 className="text-xl font-semibold">BASES DE LA CONVOCATORIA</h3>
         <p>Se convoca el curso para obtener la titulación oficial de entrenador de KRAV MAGA.</p>
         
