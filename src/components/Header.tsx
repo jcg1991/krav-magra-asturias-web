@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -15,10 +16,10 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar }) => {
   return (
     <header className="relative z-20">
       <div className="header-content relative h-32 md:h-64">
-        {/* Header background image - moved to left */}
+        {/* Header background image - nueva imagen de Krav Maga a la izquierda */}
         <div 
           className="header-image" 
-          style={{ backgroundImage: "url('/lovable-uploads/14759f98-0730-4032-9946-94251f4897bf.png')" }}
+          style={{ backgroundImage: "url('/lovable-uploads/3eca8b43-16f5-41dc-8571-655e1cf9d37b.png')" }}
         ></div>
         
         {/* Logo FEL - positioned at right in blue margin */}
