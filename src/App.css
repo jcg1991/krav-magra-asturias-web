@@ -55,7 +55,7 @@
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start; /* Align items to the start */
   width: 100%;
   overflow: hidden;
   background-color: #004080; /* Dark blue background matching the image margins */
@@ -63,19 +63,22 @@
 
 .header-image {
   background-position: left center !important;
-  width: 85%; /* Reduced width to make room for logo */
-  margin-right: 0; /* Align with left edge */
+  width: 85%; /* Width for the main image */
+  margin-right: 0;
+  background-size: cover !important; /* Ensure image covers the assigned space */
 }
 
 /* Logo positioning */
 .header-logo {
-  position: relative;
+  position: absolute;
   height: 100%;
-  width: 15%; /* Width for the blue margin area */
+  width: 15%; /* Width for the logo area */
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: #004080; /* Match the blue margin color */
+  right: 0; /* Position at the right edge */
+  top: 0;
 }
 
 @media (min-width: 768px) {
