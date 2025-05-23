@@ -16,7 +16,7 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar }) => {
   return (
     <header className="relative z-20">
       <div className="header-image h-32 md:h-64 w-full bg-[#4C0592] flex">
-        <div className="w-full h-full" style={{ backgroundImage: "url('/lovable-uploads/b00968a4-4f44-48ee-8231-6d7a70b31c6b.png')" }}></div>
+        <div className="w-full h-full" style={{ backgroundImage: "url('/lovable-uploads/f2f755b9-0e27-4606-9870-2532f2c23837.png')" }}></div>
       </div>
       <nav className="bg-primary shadow-md sticky top-0 z-20">
         <div className="container mx-auto px-4">
