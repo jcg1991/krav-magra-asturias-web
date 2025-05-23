@@ -1,4 +1,3 @@
-
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -55,7 +54,7 @@
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* Align items to the start */
+  justify-content: flex-start;
   width: 100%;
   overflow: hidden;
   background-color: #004080; /* Dark blue background matching the image margins */
@@ -63,31 +62,33 @@
 
 .header-image {
   background-position: left center !important;
-  width: 85%; /* Width for the main image */
-  margin-right: 0;
-  background-size: cover !important; /* Ensure image covers the assigned space */
+  width: 80%; /* Reduced to make more space for logo */
+  margin-left: -5%; /* Move image more to the left to hide left blue margin */
+  background-size: cover !important;
 }
 
 /* Logo positioning */
 .header-logo {
   position: absolute;
   height: 100%;
-  width: 15%; /* Width for the logo area */
+  width: 20%; /* Increased width for better logo visibility */
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: #004080; /* Match the blue margin color */
-  right: 0; /* Position at the right edge */
+  right: 0;
   top: 0;
+  z-index: 10; /* Ensure logo appears above the main image */
 }
 
 @media (min-width: 768px) {
   .header-logo {
-    width: 15%; /* Keep same proportion on desktop */
+    width: 20%;
   }
   
   .header-image {
-    width: 85%; /* Keep same proportion on desktop */
+    width: 80%;
+    margin-left: -5%;
   }
 }
 

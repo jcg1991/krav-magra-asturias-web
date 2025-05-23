@@ -25,9 +25,9 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar }) => {
         {/* Logo FEL - positioned at right in blue margin */}
         <div className="header-logo">
           <img 
-            src="/lovable-uploads/e1bb733d-5f22-4104-88d6-0364781a5357.png" 
+            src="/lovable-uploads/9ffe0c69-7986-4d28-95d4-1b8e8c3c1124.png" 
             alt="Logo Federación Española de Lucha" 
-            className="h-28 md:h-48 w-auto" 
+            className="h-28 md:h-56 w-auto object-contain" 
           />
         </div>
       </div>
