@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -16,9 +15,9 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar }) => {
   return (
     <header className="relative z-20">
       <div className="header-content relative h-32 md:h-64">
-        {/* Header background image - moved completely to left */}
+        {/* Header background image - moved to left */}
         <div 
-          className="header-image h-32 md:h-64 bg-contain bg-no-repeat" 
+          className="header-image" 
           style={{ backgroundImage: "url('/lovable-uploads/14759f98-0730-4032-9946-94251f4897bf.png')" }}
         ></div>
         
@@ -27,7 +26,7 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar }) => {
           <img 
             src="/lovable-uploads/9ffe0c69-7986-4d28-95d4-1b8e8c3c1124.png" 
             alt="Logo Federación Española de Lucha" 
-            className="h-28 md:h-56 w-auto object-contain" 
+            className="h-24 md:h-48 w-auto object-contain max-w-full" 
           />
         </div>
       </div>

@@ -1,3 +1,4 @@
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -57,38 +58,43 @@
   justify-content: flex-start;
   width: 100%;
   overflow: hidden;
-  background-color: #004080; /* Dark blue background matching the image margins */
+  background-color: #004080;
 }
 
 .header-image {
-  background-position: left center !important;
-  width: 80%; /* Reduced to make more space for logo */
-  margin-left: -5%; /* Move image more to the left to hide left blue margin */
+  position: absolute;
+  left: -10%;
+  top: 0;
+  width: 75%;
+  height: 100%;
   background-size: cover !important;
+  background-position: left center !important;
+  background-repeat: no-repeat;
+  z-index: 1;
 }
 
 /* Logo positioning */
 .header-logo {
   position: absolute;
+  right: 0;
+  top: 0;
   height: 100%;
-  width: 20%; /* Increased width for better logo visibility */
+  width: 25%;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #004080; /* Match the blue margin color */
-  right: 0;
-  top: 0;
-  z-index: 10; /* Ensure logo appears above the main image */
+  background-color: #004080;
+  z-index: 10;
 }
 
 @media (min-width: 768px) {
   .header-logo {
-    width: 20%;
+    width: 25%;
   }
   
   .header-image {
-    width: 80%;
-    margin-left: -5%;
+    width: 75%;
+    left: -10%;
   }
 }
 
