@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -15,7 +14,7 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar }) => {
 
   return (
     <header className="relative z-20">
-      <div className="header-image h-32 md:h-64 w-full bg-contain bg-no-repeat bg-center" style={{ backgroundImage: "url('/lovable-uploads/14759f98-0730-4032-9946-94251f4897bf.png')" }}></div>
+      <div className="header-image h-32 md:h-64 w-full bg-contain bg-no-repeat bg-center" style={{ backgroundImage: "url('/lovable-uploads/a0ddebfe-1608-436d-b843-a723970338f7.png')" }}></div>
       <nav className="bg-primary shadow-md sticky top-0 z-20">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
