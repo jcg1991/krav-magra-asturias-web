@@ -53,16 +53,34 @@
 /* Header styles */
 .header-content {
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .header-image {
   background-position: center !important;
-  padding-right: 120px; /* Make space for the logo on mobile */
+  width: 75%; /* Reduce width to make room for logo */
+  margin-right: auto; /* Push to left */
+}
+
+/* Logo positioning */
+.header-logo {
+  position: relative;
+  height: 100%;
+  width: 120px; /* Fixed width for mobile */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @media (min-width: 768px) {
+  .header-logo {
+    width: 160px; /* More space for the logo on desktop */
+  }
+  
   .header-image {
-    padding-right: 160px; /* More space for the logo on desktop */
+    width: 80%; /* Slightly larger on desktop but still making room */
   }
 }
 
