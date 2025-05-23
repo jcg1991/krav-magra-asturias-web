@@ -52,14 +52,15 @@
 
 /* Custom styles */
 .header-image {
-  background-color: #003087; /* Azul marino que coincide con el fondo de la imagen */
+  background-color: #4C0592; /* Color púrpura que coincide con el fondo de la imagen */
 }
 
 .header-image > div {
-  background-size: cover;
+  background-size: 100% 100%; /* Esto estira la imagen para que ocupe todo el espacio */
   background-position: center;
   background-repeat: no-repeat;
   width: 100%;
+  height: 100%;
 }
 
 /* Mobile optimizations */
