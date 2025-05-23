@@ -15,22 +15,7 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar }) => {
 
   return (
     <header className="relative z-20">
-      <div className="header-content relative">
-        {/* Logo FEL */}
-        <div className="absolute left-4 top-4 md:left-8 md:top-6 z-10">
-          <img 
-            src="/lovable-uploads/e1bb733d-5f22-4104-88d6-0364781a5357.png" 
-            alt="Logo Federación Española de Lucha" 
-            className="h-24 md:h-32 w-auto"
-          />
-        </div>
-        {/* Header background image */}
-        <div 
-          className="header-image h-32 md:h-64 w-full bg-contain bg-no-repeat bg-center" 
-          style={{ backgroundImage: "url('/lovable-uploads/14759f98-0730-4032-9946-94251f4897bf.png')" }}
-        ></div>
-      </div>
-      
+      <div className="header-image h-32 md:h-64 w-full bg-contain bg-no-repeat bg-center" style={{ backgroundImage: "url('/lovable-uploads/14759f98-0730-4032-9946-94251f4897bf.png')" }}></div>
       <nav className="bg-primary shadow-md sticky top-0 z-20">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
