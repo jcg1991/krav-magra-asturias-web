@@ -1,4 +1,3 @@
-
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -63,12 +62,12 @@
 
 .header-image {
   position: absolute;
-  left: -10%;
+  left: 0;
   top: 0;
   width: 75%;
   height: 100%;
   background-size: cover !important;
-  background-position: left center !important;
+  background-position: center left !important;
   background-repeat: no-repeat;
   z-index: 1;
 }
@@ -94,7 +93,7 @@
   
   .header-image {
     width: 75%;
-    left: -10%;
+    left: 0;
   }
 }
 
