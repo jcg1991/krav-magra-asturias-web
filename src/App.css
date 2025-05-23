@@ -1,3 +1,4 @@
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -52,48 +53,16 @@
 /* Header styles */
 .header-content {
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  width: 100%;
-  overflow: hidden;
-  background-color: #004080;
 }
 
 .header-image {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 75%;
-  height: 100%;
-  background-size: cover !important;
-  background-position: center left !important;
-  background-repeat: no-repeat;
-  z-index: 1;
-}
-
-/* Logo positioning */
-.header-logo {
-  position: absolute;
-  right: 0;
-  top: 0;
-  height: 100%;
-  width: 25%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #004080;
-  z-index: 10;
+  background-position: right center !important;
+  padding-left: 120px; /* Make space for the logo on mobile */
 }
 
 @media (min-width: 768px) {
-  .header-logo {
-    width: 25%;
-  }
-  
   .header-image {
-    width: 75%;
-    left: 0;
+    padding-left: 160px; /* More space for the logo on desktop */
   }
 }
 

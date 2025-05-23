@@ -15,21 +15,20 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar }) => {
 
   return (
     <header className="relative z-20">
-      <div className="header-content relative h-32 md:h-64">
-        {/* Header background image - nueva imagen de Krav Maga a la izquierda */}
-        <div 
-          className="header-image" 
-          style={{ backgroundImage: "url('/lovable-uploads/3eca8b43-16f5-41dc-8571-655e1cf9d37b.png')" }}
-        ></div>
-        
-        {/* Logo FEL - positioned at right in blue margin */}
-        <div className="header-logo">
+      <div className="header-content relative">
+        {/* Logo FEL */}
+        <div className="absolute left-4 top-4 md:left-8 md:top-6 z-10">
           <img 
-            src="/lovable-uploads/9ffe0c69-7986-4d28-95d4-1b8e8c3c1124.png" 
+            src="/lovable-uploads/e1bb733d-5f22-4104-88d6-0364781a5357.png" 
             alt="Logo Federación Española de Lucha" 
-            className="h-24 md:h-48 w-auto object-contain max-w-full" 
+            className="h-24 md:h-32 w-auto"
           />
         </div>
+        {/* Header background image */}
+        <div 
+          className="header-image h-32 md:h-64 w-full bg-contain bg-no-repeat bg-center" 
+          style={{ backgroundImage: "url('/lovable-uploads/14759f98-0730-4032-9946-94251f4897bf.png')" }}
+        ></div>
       </div>
       
       <nav className="bg-primary shadow-md sticky top-0 z-20">
