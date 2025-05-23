@@ -56,13 +56,13 @@
 }
 
 .header-image {
-  background-position: right center !important;
-  padding-left: 120px; /* Make space for the logo on mobile */
+  background-position: center !important;
+  padding-right: 120px; /* Make space for the logo on mobile */
 }
 
 @media (min-width: 768px) {
   .header-image {
-    padding-left: 160px; /* More space for the logo on desktop */
+    padding-right: 160px; /* More space for the logo on desktop */
   }
 }
 
